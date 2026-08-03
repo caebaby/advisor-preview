@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wealth. Worth. Legacy. · Sara Adams</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bone:#f6f3ee;
+    --bone-2:#efeae2;
+    --white:#fffdfa;
+    --ink:#1f1f1d;
+    --ink-2:#4a4845;
+    --ink-3:#8d8880;
+    --blush:#f3d9d4;
+    --blush-2:#e9c3bb;
+    --blush-deep:#c98f83;
+    --line:rgba(31,31,29,.14);
+    --line-2:rgba(31,31,29,.26);
+    --script:#dedad3;
+    --serif:'Playfair Display',Georgia,'Times New Roman',serif;
+    --sans:'Jost',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,sans-serif;
+    --sh:0 1px 2px rgba(31,31,29,.04), 0 12px 36px rgba(31,31,29,.08);
+    --sh-lg:0 2px 6px rgba(31,31,29,.05), 0 30px 70px rgba(31,31,29,.13);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bone);color:var(--ink);font-family:var(--sans);font-weight:300;-webkit-font-smoothing:antialiased;line-height:1.65;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 44px;}
+  .kick{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2);font-weight:400;}
+
+  /* hero */
+  .stage{padding:74px 0 80px;position:relative;}
+  .rule-t,.rule-b{height:1px;background:var(--ink);opacity:.85;}
+  .stage .inner{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center;padding:62px 0 54px;position:relative;}
+  .stage h1{font-family:var(--serif);font-weight:400;font-size:104px;line-height:.93;letter-spacing:-.02em;margin:22px 0 0;}
+  .stage h1 em{font-style:italic;}
+  .stage .lede{font-size:17px;color:var(--ink-2);max-width:400px;margin-top:30px;line-height:1.7;}
+  .sub-caps{font-size:12.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-2);margin-top:26px;font-weight:400;}
+  .pill-row{display:flex;gap:9px;margin-top:34px;flex-wrap:wrap;align-items:center;}
+  .pill{font-size:11px;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--line-2);padding:9px 18px;border-radius:100px;color:var(--ink-2);}
+  .arrow{background:var(--blush);border-radius:100px;padding:11px 26px;display:inline-flex;align-items:center;}
+  .sig{position:absolute;right:6px;bottom:-4px;font-family:var(--serif);font-style:italic;font-size:88px;color:var(--script);line-height:1;pointer-events:none;user-select:none;z-index:0;}
+  .sig small{font-size:26px;vertical-align:super;margin-right:6px;}
+  .photo{aspect-ratio:4/5;position:relative;z-index:1;background:var(--blush) url('sara-photos/hero.jpg') center 12%/cover;}
+
+  /* goals */
+  .goals{padding:20px 0 0;}
+  .goals .lead{font-family:var(--serif);font-size:30px;line-height:1.3;max-width:760px;margin:0 0 34px;font-weight:400;}
+  .goal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--ink);}
+  .goal{padding:26px 26px 30px;border-right:1px solid var(--line);}
+  .goal:last-child{border-right:none;}
+  .goal .g-n{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--blush-deep);}
+  .goal q{display:block;font-family:var(--serif);font-size:17px;line-height:1.4;margin:10px 0 12px;font-style:italic;}
+  .goal p{font-size:13.5px;color:var(--ink-3);line-height:1.6;}
+
+  /* sections */
+  .sec{padding:88px 0 0;}
+  .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:8px;}
+  .sec-n{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--blush-deep);}
+  .sec-head h2{font-family:var(--serif);font-weight:400;font-size:32px;letter-spacing:-.01em;}
+  .note{margin-left:auto;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);border:1px solid var(--line);border-radius:100px;padding:6px 15px;white-space:nowrap;}
+  .serves{font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--blush-deep);margin-bottom:26px;}
+  .serves b{color:var(--ink-2);font-weight:400;}
+
+  /* browser */
+  .browser{border-radius:12px;overflow:hidden;box-shadow:var(--sh-lg);border:1px solid var(--line);}
+  .chrome{background:var(--bone-2);border-bottom:1px solid var(--line);padding:12px 18px;display:flex;align-items:center;gap:8px;}
+  .dot{width:9px;height:9px;border-radius:50%;background:rgba(31,31,29,.16);}
+  .url{flex:1;margin-left:12px;background:var(--white);border:1px solid var(--line);border-radius:5px;padding:6px 14px;font-size:12px;color:var(--ink-3);}
+  .site{background:var(--bone);}
+  .site-nav{display:flex;align-items:center;padding:26px 46px;border-bottom:1px solid var(--line);}
+  .logo{font-family:var(--serif);font-size:17px;}
+  .site-nav ul{display:flex;gap:32px;margin-left:auto;list-style:none;}
+  .site-nav li{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);}
+  .nav-cta{font-size:11px;letter-spacing:.12em;text-transform:uppercase;background:var(--blush);border-radius:100px;padding:10px 22px;margin-left:32px;}
+  .site-hero{display:grid;grid-template-columns:1.08fr .92fr;gap:52px;padding:64px 46px 60px;align-items:center;}
+  .site-hero h3{font-family:var(--serif);font-weight:400;font-size:58px;line-height:1.02;letter-spacing:-.02em;margin:16px 0 20px;}
+  .site-hero h3 em{font-style:italic;}
+  .site-hero p{color:var(--ink-2);font-size:15.5px;max-width:400px;margin-bottom:30px;line-height:1.7;}
+  .btn-row{display:flex;gap:12px;align-items:center;}
+  .btn{font-family:var(--sans);font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;padding:15px 30px;border-radius:100px;background:var(--ink);color:var(--bone);border:none;}
+  .btn-2{font-family:var(--sans);font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;padding:15px 28px;border-radius:100px;background:var(--blush);color:var(--ink);border:none;}
+  .site-photo{aspect-ratio:4/5;background:var(--bone-2) url('sara-photos/site.jpg') center 14%/cover;}
+  .strip{display:grid;grid-template-columns:repeat(3,1fr);background:var(--white);}
+  .strip div{padding:32px 34px;border-right:1px solid var(--line);}
+  .strip div:last-child{border-right:none;}
+  .strip .n{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--blush-deep);}
+  .strip h4{font-family:var(--serif);font-weight:400;font-size:20px;margin:8px 0 8px;}
+  .strip p{font-size:14px;color:var(--ink-3);line-height:1.6;}
+
+  /* podcast */
+  .pod{display:grid;grid-template-columns:370px 1fr;gap:44px;align-items:start;}
+  .art{aspect-ratio:1;box-shadow:var(--sh-lg);position:relative;overflow:hidden;background:var(--bone-2);}
+  .art .img{position:absolute;inset:0 0 34% 0;background:url('sara-photos/podcast.jpg') center 8%/cover;}
+  .art .band{position:absolute;left:0;right:0;bottom:0;height:34%;background:var(--bone);padding:0 26px;display:flex;flex-direction:column;justify-content:center;}
+  .art .band h3{font-family:var(--serif);font-weight:400;font-size:29px;line-height:1.04;letter-spacing:-.01em;}
+  .art .band h3 em{font-style:italic;}
+  .art .band .by{font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3);margin-top:9px;}
+  .art .tagtop{position:absolute;top:18px;left:20px;font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.4);z-index:2;}
+  .plats{display:flex;gap:8px;margin-top:16px;}
+  .plat{font-size:10px;letter-spacing:.13em;text-transform:uppercase;border:1px solid var(--line);color:var(--ink-3);padding:8px 15px;border-radius:100px;}
+  .eps{background:var(--white);border:1px solid var(--line);border-radius:10px;box-shadow:var(--sh);overflow:hidden;}
+  .ep{display:flex;align-items:center;gap:20px;padding:20px 26px;border-bottom:1px solid var(--line);}
+  .ep:last-of-type{border-bottom:none;}
+  .ep.now{background:var(--bone);}
+  .ep-n{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--blush-deep);width:22px;flex:none;}
+  .ep-t{flex:1;font-size:15px;}
+  .ep.now .ep-t{font-weight:500;}
+  .ep-d{font-size:12px;color:var(--ink-3);flex:none;}
+  .play{width:32px;height:32px;border-radius:50%;flex:none;border:1px solid var(--line-2);display:flex;align-items:center;justify-content:center;}
+  .play.on{background:var(--blush);border-color:transparent;}
+  .tri{width:0;height:0;border-left:8px solid var(--ink-2);border-top:5px solid transparent;border-bottom:5px solid transparent;margin-left:2px;}
+  .play.on .tri{border-left-color:var(--ink);}
+  .bar{padding:18px 26px;border-top:1px solid var(--line);display:flex;align-items:center;gap:16px;}
+  .track{flex:1;height:2px;background:var(--line);position:relative;}
+  .track i{position:absolute;left:0;top:0;height:100%;width:34%;background:var(--blush-deep);}
+  .track b{position:absolute;left:34%;top:50%;width:9px;height:9px;margin:-4.5px 0 0 -4.5px;border-radius:50%;background:var(--blush-deep);}
+  .time{font-size:11.5px;color:var(--ink-3);}
+
+  /* social */
+  .ig{display:grid;grid-template-columns:322px 1fr;gap:44px;align-items:start;}
+  .phone{border-radius:34px;border:1px solid var(--line-2);background:var(--white);padding:10px;box-shadow:var(--sh-lg);}
+  .screen{border-radius:25px;overflow:hidden;background:var(--white);}
+  .ig-top{padding:13px 16px;border-bottom:1px solid var(--line);text-align:center;font-family:var(--serif);font-size:14px;}
+  .ig-prof{padding:18px 16px 14px;}
+  .ig-row{display:flex;align-items:center;gap:20px;}
+  .av{width:68px;height:68px;border-radius:50%;flex:none;background:var(--blush) url('sara-photos/avatar.jpg') center/cover;border:2px solid var(--blush-2);}
+  .stats{display:flex;gap:22px;flex:1;}
+  .stat{text-align:center;}
+  .stat b{display:block;font-size:15px;font-weight:500;}
+  .stat span{font-size:11px;color:var(--ink-3);}
+  .handle{margin-top:15px;font-size:13.5px;font-weight:500;}
+  .bio{font-size:12.5px;color:var(--ink-2);line-height:1.6;margin-top:3px;}
+  .bio .b{color:var(--blush-deep);}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:14px;}
+  .cell{aspect-ratio:1;display:flex;align-items:center;justify-content:center;padding:8px;}
+  .cell span{font-family:var(--serif);font-size:10px;line-height:1.25;text-align:center;color:var(--ink-2);}
+  .c-bone{background:var(--bone);} .c-blush{background:var(--blush);} .c-ink{background:var(--ink);}
+  .c-ink span{color:var(--bone);}
+  .c-p1{background:var(--bone-2) url('sara-photos/podcast.jpg') center 4%/cover;}
+  .c-p2{background:var(--bone-2) url('sara-photos/site.jpg') 46% 26%/cover;}
+  .c-p3{background:var(--bone-2) url('sara-photos/hero.jpg') center 62%/cover;}
+  .c-p4{background:var(--bone-2) url('sara-photos/site.jpg') 56% 6%/196%;}
+
+  .growth{background:var(--white);border:1px solid var(--line);border-radius:10px;box-shadow:var(--sh);padding:30px 32px 24px;}
+  .g-lbl{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);}
+  .g-num{font-family:var(--serif);font-size:54px;line-height:1;letter-spacing:-.02em;}
+  .g-delta{font-size:12.5px;letter-spacing:.06em;color:var(--blush-deep);margin-left:14px;}
+  .metrics{display:grid;grid-template-columns:repeat(3,1fr);margin-top:24px;border-top:1px solid var(--line);}
+  .metrics div{padding:20px 0 4px;border-right:1px solid var(--line);text-align:center;}
+  .metrics div:last-child{border-right:none;}
+  .metrics b{display:block;font-family:var(--serif);font-size:26px;font-weight:400;}
+  .metrics span{font-size:12.5px;letter-spacing:.06em;color:var(--ink-3);}
+
+  /* engine + close */
+  .engine{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--ink);margin-top:8px;}
+  .step{padding:26px 24px 30px;border-right:1px solid var(--line);}
+  .step:last-child{border-right:none;}
+  .step .s-n{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--blush-deep);}
+  .step h4{font-family:var(--serif);font-weight:400;font-size:20px;margin:9px 0 9px;}
+  .step p{font-size:13.5px;color:var(--ink-3);line-height:1.6;}
+  .close{margin:96px 0 0;padding:56px 0 60px;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);text-align:center;}
+  .close h2{font-family:var(--serif);font-weight:400;font-size:46px;line-height:1.12;letter-spacing:-.02em;}
+  .close h2 em{font-style:italic;}
+  .close p{font-size:15px;color:var(--ink-2);margin-top:18px;}
+
+  .foot{margin:34px 0 44px;font-size:13px;color:var(--ink-3);max-width:720px;line-height:1.75;}
+  .foot b{font-weight:500;color:var(--ink-2);}
+
+  /* spine */
+  .spine{margin:78px 0 0;padding:44px 0 0;border-top:1px solid var(--ink);}
+  .spine .lead{font-family:var(--serif);font-size:29px;line-height:1.32;max-width:800px;margin-bottom:36px;}
+  .spine-row{display:grid;grid-template-columns:repeat(5,1fr);gap:0;}
+  .sp{padding:0 20px 0 0;border-right:1px solid var(--line);padding-left:20px;}
+  .sp:first-child{padding-left:0;}
+  .sp:last-child{border-right:none;}
+  .sp .n{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--blush-deep);}
+  .sp h4{font-family:var(--serif);font-weight:400;font-size:19px;margin:8px 0 8px;line-height:1.2;}
+  .sp p{font-size:12px;color:var(--ink-3);line-height:1.6;}
+
+  /* big pull quote */
+  .pq{margin:52px 0 8px;padding:46px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);}
+  .pq p{font-family:var(--serif);font-size:40px;line-height:1.2;letter-spacing:-.015em;max-width:940px;}
+  .pq p em{font-style:italic;color:var(--blush-deep);}
+  .pq .attrib{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);margin-top:20px;}
+  .pq.tight{margin:40px 0 0;}
+
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:34px;border-top:1px solid var(--line);}
+  .two > div{padding:26px 30px 28px;border-right:1px solid var(--line);}
+  .two > div:last-child{border-right:none;}
+  .two .lbl{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);}
+  .two h5{font-family:var(--serif);font-weight:400;font-size:23px;margin:10px 0 10px;}
+  .two p{font-size:13.5px;color:var(--ink-2);line-height:1.7;}
+  .two .now h5{color:var(--ink-3);}
+
+  .prose{font-size:16px;line-height:1.8;color:var(--ink-2);max-width:720px;margin-top:26px;}
+  .prose strong{font-weight:500;color:var(--ink);}
+  .prose + .prose{margin-top:16px;}
+
+  /* P5 ladder */
+  .ladder{display:grid;grid-template-columns:repeat(6,1fr);gap:0;margin-top:34px;border-top:1px solid var(--line);}
+  .rung{padding:22px 16px 26px;border-right:1px solid var(--line);}
+  .rung:last-child{border-right:none;}
+  .rung .r-n{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--blush-deep);}
+  .rung p{font-size:13px;color:var(--ink-2);line-height:1.55;margin-top:9px;}
+
+  /* phase map */
+  .phases{display:grid;grid-template-columns:repeat(6,1fr);gap:0;margin-top:30px;}
+  .ph{padding:0 14px 0 0;position:relative;}
+  .ph .bar{height:5px;background:var(--bone-2);margin-bottom:14px;}
+  .ph.on .bar{background:var(--blush-deep);}
+  .ph.next .bar{background:var(--blush);}
+  .ph .pn{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);}
+  .ph.on .pn{color:var(--blush-deep);}
+  .ph h5{font-family:var(--serif);font-weight:400;font-size:18px;margin:6px 0 7px;}
+  .ph.off h5,.ph.off p{opacity:.42;}
+  .ph p{font-size:12.5px;color:var(--ink-3);line-height:1.55;}
+  .youhere{display:inline-block;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;background:var(--ink);color:var(--bone);padding:5px 11px;margin-bottom:11px;}
+
+  .cons{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:44px;border-top:1px solid var(--ink);}
+  .con{padding:24px 26px 28px 26px;border-right:1px solid var(--line);}
+  .con:first-child{padding-left:0;}
+  .con:last-child{border-right:none;}
+  .con .cn{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--blush-deep);}
+  .con h5{font-family:var(--serif);font-weight:400;font-size:19px;margin:8px 0 8px;}
+  .con p{font-size:13.5px;color:var(--ink-3);line-height:1.6;}
+
+  .flowline{display:flex;align-items:stretch;margin-top:34px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .fl{flex:1;padding:24px 30px 26px 26px;position:relative;}
+  .fl:first-child{padding-left:0;}
+  .fl:not(:last-child)::after{content:"→";position:absolute;right:10px;top:27px;color:var(--blush-deep);font-size:15px;}
+  .fl .fn{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--blush-deep);}
+  .fl h5{font-family:var(--serif);font-weight:400;font-size:19px;margin:7px 0 6px;}
+  .fl p{font-size:13px;color:var(--ink-3);line-height:1.55;}
+
+  /* gap chart */
+  .gap{margin-top:16px;border-top:1px solid var(--ink);}
+  .gap-head{display:grid;grid-template-columns:1.05fr 1.25fr 1.35fr;gap:0;padding:14px 0 13px;border-bottom:1px solid var(--line);}
+  .gap-head div{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);padding-right:26px;}
+  .gap-head .h3{color:var(--blush-deep);padding-left:26px;}
+  .gap-row{display:grid;grid-template-columns:1.05fr 1.25fr 1.35fr;gap:0;border-bottom:1px solid var(--line);}
+  .gap-row > div{padding:26px 26px 28px 0;}
+  .g-want h5{font-family:var(--serif);font-weight:400;font-size:21px;line-height:1.25;}
+  .g-want span{display:block;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--blush-deep);margin-bottom:9px;}
+  .g-now{opacity:.62;border-right:1px solid var(--line);}
+  .g-now q{display:block;font-family:var(--serif);font-style:italic;font-size:15px;line-height:1.45;color:var(--ink);}
+  .g-now p{font-size:13.5px;color:var(--ink-2);line-height:1.6;margin-top:9px;}
+  .g-fix{background:var(--white);padding-left:26px !important;}
+  .g-fix b{display:block;font-family:var(--serif);font-weight:400;font-size:17px;margin-bottom:8px;}
+  .g-fix p{font-size:13.5px;color:var(--ink-2);line-height:1.65;}
+  .gap-row:last-child{border-bottom:1px solid var(--ink);}
+
+  /* emphasis system */
+  .mark{background:linear-gradient(transparent 56%, var(--blush) 56%);padding:0 2px;color:inherit;}
+  .mark-ink{background:linear-gradient(transparent 56%, var(--blush-2) 56%);padding:0 2px;font-weight:400;color:var(--ink);}
+
+  .callout{border-left:3px solid var(--blush-deep);background:var(--white);padding:24px 28px 26px;margin:30px 0;max-width:790px;}
+  .callout .c-lbl{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--blush-deep);margin-bottom:11px;}
+  .callout p{font-family:var(--serif);font-size:22px;line-height:1.42;color:var(--ink);}
+  .callout p em{font-style:italic;}
+  .callout.ink{background:var(--ink);border-left-color:var(--blush);}
+  .callout.ink p{color:var(--bone);}
+  .callout.ink .c-lbl{color:var(--blush-2);}
+
+  .lead-line{font-family:var(--serif);font-size:22px;line-height:1.48;color:var(--ink);max-width:790px;margin-top:22px;}
+
+  .stat-strip{display:flex;margin:36px 0 6px;border-top:1px solid var(--ink);border-bottom:1px solid var(--line);}
+  .stat-strip div{padding:22px 40px 24px 0;margin-right:40px;border-right:1px solid var(--line);}
+  .stat-strip div:last-child{border-right:none;margin-right:0;}
+  .stat-strip b{font-family:var(--serif);font-size:46px;display:block;line-height:1;letter-spacing:-.02em;}
+  .stat-strip span{font-size:12.5px;color:var(--ink-3);letter-spacing:.04em;display:block;margin-top:8px;}
+  .stat-strip .hi b{color:var(--blush-deep);}
+
+  /* two-column contrast, sharpened */
+  .two .now{background:transparent;}
+  .two .now h5,.two .now p{opacity:.55;}
+  .two .win{background:var(--white);}
+  .two .win .lbl{color:var(--blush-deep);}
+
+  /* vision */
+  .vision{display:grid;grid-template-columns:1.02fr .98fr;gap:56px;align-items:center;margin-top:40px;}
+  .vision .v-photo{aspect-ratio:1;background:var(--bone-2) url('sara-photos/site.jpg') center 12%/cover;}
+  .vision h3{font-family:var(--serif);font-weight:400;font-size:38px;line-height:1.16;letter-spacing:-.015em;}
+  .vision h3 em{font-style:italic;}
+  .v-list{margin-top:26px;}
+  .v-list div{padding:15px 0;border-top:1px solid var(--line);font-size:14.5px;color:var(--ink-2);line-height:1.6;}
+  .v-list div:first-child{border-top:none;padding-top:0;}
+  .v-list b{font-weight:500;color:var(--ink);}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <section class="stage">
+    <div class="rule-t"></div>
+    <div class="inner">
+      <div>
+        <div class="kick">A strategy conversation</div>
+        <h1>Wealth.<br>Worth.<br><em>Legacy.</em></h1>
+        <div class="sub-caps">Every woman has a legacy</div>
+        <p class="lede">Your children will inherit what you built. This makes sure they also know the woman who built it.</p>
+        <div class="pill-row">
+          <span class="pill">Website</span><span class="pill">Podcast</span><span class="pill">Social</span><span class="pill">Community</span>
+          <span class="arrow"><svg width="26" height="10" viewBox="0 0 26 10" fill="none"><path d="M0 5h24M19 1l5 4-5 4" stroke="#1f1f1d" stroke-width="1.1" fill="none"/></svg></span>
+        </div>
+      </div>
+      <div class="photo"></div>
+      <div class="sig"><small>xo</small>Sara</div>
+    </div>
+    <div class="rule-b"></div>
+  </section>
+
+  <section class="goals">
+    <p class="lead">You already know what you want. Everything that follows is built to get you there.</p>
+    <div class="goal-grid">
+      <div class="goal">
+        <div class="g-n">Goal 01</div>
+        <q>I want to be a public speaker. I want to represent women.</q>
+        <p>Be the voice. Tell your story and put other women's stories on a platform.</p>
+      </div>
+      <div class="goal">
+        <div class="g-n">Goal 02</div>
+        <q>I don't want it to just be Knoxville. I want it to be nationwide.</q>
+        <p>Reach women anywhere, not just the ones who walk through a local door.</p>
+      </div>
+      <div class="goal">
+        <div class="g-n">Goal 03</div>
+        <q>Find the people, refer them, and move on.</q>
+        <p>Stay in the first meeting and the relationship. Hand the plan to a team.</p>
+      </div>
+      <div class="goal">
+        <div class="g-n">Goal 04</div>
+        <q>Why are you not bringing me in to meet with other females?</q>
+        <p>Bring other women advisors with you as the practice grows past one person.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top:78px">
+    <div class="sec-head"><span class="sec-n">&mdash;</span><h2>The gap</h2><span class="note">Your words, from our call</span></div>
+    <p class="lead-line" style="margin-bottom:30px">Every one of these is something you already want. None of them are failures of effort. <span class="mark">They're all the same structural problem.</span></p>
+
+    <div class="gap">
+      <div class="gap-head">
+        <div>What you want</div>
+        <div>Where it stands today</div>
+        <div class="h3">What Axiom Planning Resources delivers</div>
+      </div>
+
+      <div class="gap-row">
+        <div class="g-want"><span>Goal 01</span><h5>Be the voice</h5></div>
+        <div class="g-now">
+          <q>I need a marketing person who can showcase me. I don't have that where I am.</q>
+          <p>Paying $400 a month out of pocket for help with social. No brand, no show, no marketing team, and compliance friction on everything.</p>
+        </div>
+        <div class="g-fix">
+          <b>The content engine</b>
+          <p>Origin story, brand, website, podcast — produced, edited, distributed, compliance handled end to end. You record. The team does the rest.</p>
+        </div>
+      </div>
+
+      <div class="gap-row">
+        <div class="g-want"><span>Goal 02</span><h5>Reach women nationwide</h5></div>
+        <div class="g-now">
+          <q>I don't market. I've done zero marketing.</q>
+          <p>Everything is inbound and word of mouth. No digital front door, and nothing that captures a woman who isn't ready to call yet.</p>
+        </div>
+        <div class="g-fix">
+          <b>The site and the legacy quiz</b>
+          <p>A front door that works while you sleep, anywhere in the country. The quiz converts attention into a named woman who's already told you what matters.</p>
+        </div>
+      </div>
+
+      <div class="gap-row">
+        <div class="g-want"><span>Goal 03</span><h5>Hand off the plan</h5></div>
+        <div class="g-now">
+          <q>I don't have the knowledge for it, and I don't have the desire to want to do it.</q>
+          <p>Still doing joint work case by case. No license means fee-based revenue isn't yours to capture even when you source it.</p>
+        </div>
+        <div class="g-fix">
+          <b>Series 65/66 and the planning company</b>
+          <p>The license makes you advisor of record. Ten full-time planners build every plan and hand it back for you to present in your voice.</p>
+        </div>
+      </div>
+
+      <div class="gap-row">
+        <div class="g-want"><span>Goal 04</span><h5>Bring other women with you</h5></div>
+        <div class="g-now">
+          <q>Why are you not bringing me in on this to meet with other females?</q>
+          <p>Nothing to offer another woman. You don't own a practice, so there's no seat to bring her into.</p>
+        </div>
+        <div class="g-fix">
+          <b>The associate program</b>
+          <p>When volume outgrows you, overflow becomes a seat. APR shares the ramp cost, so growing the team doesn't come out of your margin.</p>
+        </div>
+      </div>
+
+      <div class="gap-row">
+        <div class="g-want"><span>Underneath all of it</span><h5>Stability you can't lose</h5></div>
+        <div class="g-now">
+          <q>I'm building up someone else's practice.</q>
+          <p>A salary set by someone else, thin residuals, and nothing with terminal value at the end of it.</p>
+        </div>
+        <div class="g-fix">
+          <b>Ownership</b>
+          <p>100% of your clients and your brand, recurring fee revenue that compounds, and a practice that becomes an asset you can hold or sell.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="sec-n">&mdash;</span><h2>Where you are on the map</h2><span class="note">Jerry's six phases</span></div>
+    <p class="lead-line" style="margin-bottom:8px">Every advisor at Axiom Planning Resources sits somewhere on this. The phase you're in tells you which constraint is actually holding you — and there's something built for each one.</p>
+
+    <div class="phases">
+      <div class="ph on">
+        <div class="bar"></div>
+        <div class="youhere">You are here</div>
+        <div class="pn">Phase 1</div><h5>Genesis</h5>
+        <p>Recurring revenue hasn't been built yet. Every year starts closer to zero than it should.</p>
+      </div>
+      <div class="ph next">
+        <div class="bar"></div>
+        <div class="pn">Phase 2</div><h5>Sustainability</h5>
+        <p>Recurring covers the budget. The math finally works without a new sale every month.</p>
+      </div>
+      <div class="ph off">
+        <div class="bar"></div>
+        <div class="pn">Phase 3</div><h5>Capacity</h5>
+        <p>More demand than calendar. The first associate joins.</p>
+      </div>
+      <div class="ph off">
+        <div class="bar"></div>
+        <div class="pn">Phase 4</div><h5>Expansion</h5>
+        <p>A company rather than a practice. Multiple advisors serving clients.</p>
+      </div>
+      <div class="ph off">
+        <div class="bar"></div>
+        <div class="pn">Phase 5</div><h5>Owner / Operator</h5>
+        <p>It runs without you in the room.</p>
+      </div>
+      <div class="ph off">
+        <div class="bar"></div>
+        <div class="pn">Phase 6</div><h5>Exit</h5>
+        <p>A book becomes an asset with a real number on it.</p>
+      </div>
+    </div>
+
+    <div class="callout ink" style="margin-top:44px;max-width:840px">
+      <div class="c-lbl">The unusual part of your situation</div>
+      <p>You have Phase 3 demand sitting on Phase 1 infrastructure. <em>You already have what most advisors spend ten years building — and nowhere to put it.</em></p>
+    </div>
+
+    <p class="prose">Five to six women a week are already raising their hand. That's a capacity problem. But there's no license to capture the revenue, no recurring base, no team of your own, and no brand doing any work while you sleep. <span class="mark-ink">The demand arrived before the machinery did.</span></p>
+
+    <div class="serves" style="margin:44px 0 0">Four constraints &mdash; <b>and what removes each one</b></div>
+    <div class="cons">
+      <div class="con">
+        <div class="cn">i</div><h5>License</h5>
+        <p>No 65/66 means fee-based revenue isn't yours to capture, even on business you source yourself.</p>
+      </div>
+      <div class="con">
+        <div class="cn">ii</div><h5>Positioning</h5>
+        <p>No brand or authority hub. The story that makes women call you has nowhere to live.</p>
+      </div>
+      <div class="con">
+        <div class="cn">iii</div><h5>Team</h5>
+        <p>You already hand off — joint work, an assistant for paperwork. But none of that team is yours, and every handoff builds someone else's business.</p>
+      </div>
+      <div class="con">
+        <div class="cn">iv</div><h5>Systems</h5>
+        <p>Nothing repeatable. Each client is built from scratch, by hand, by you.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="sec-n">&mdash;</span><h2>The strategy</h2></div>
+    <p class="lead-line" style="margin-bottom:12px">You stay where you're strongest — <span class="mark">bringing in the business</span> — and everything else gets handed to a team or a system.</p>
+    <p class="prose" style="margin-bottom:6px">You're already the best part of this business. The strategy doesn't ask you to become a planner or an operator. It builds the machinery around what you do naturally, then keeps adding capacity as the demand grows.</p>
+
+    <div class="flowline">
+      <div class="fl">
+        <div class="fn">First</div><h5>Get licensed</h5>
+        <p>65/66 makes you advisor of record, so the business you generate is yours to keep.</p>
+      </div>
+      <div class="fl">
+        <div class="fn">Then</div><h5>Build the hub</h5>
+        <p>Brand, website, podcast. Your story working while you're not in the room.</p>
+      </div>
+      <div class="fl">
+        <div class="fn">Then</div><h5>Bring in business</h5>
+        <p>Social, quiz, and ads once it converts. Your lane, permanently.</p>
+      </div>
+      <div class="fl">
+        <div class="fn">Then</div><h5>Hand off the work</h5>
+        <p>Planning team builds every plan. Associates absorb what you can't hold.</p>
+      </div>
+      <div class="fl">
+        <div class="fn">Result</div><h5>A platform</h5>
+        <p>Not a practice you staff. A platform other women want to be part of.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="sec-n">01</span><h2>Getting licensed</h2><span class="note">Series 65 / 66</span></div>
+    <div class="serves">Serves <b>Goal 03 — find them, hand off the plan, move on</b></div>
+
+    <div class="pq">
+      <p>The license doesn't make you the technician.<br>It makes you the <em>authority</em> — the exact role you described wanting, and assumed didn't exist.</p>
+    </div>
+
+    <p class="lead-line">You read the 65/66 as a test of what you know. It isn't. It's a <span class="mark">positioning instrument.</span></p>
+
+    <p class="prose">It makes you the <strong>advisor of record</strong> — the expert of record, the CEO of the relationship. You direct the flow. The planning department executes inside it.</p>
+
+    <div class="two">
+      <div class="now">
+        <div class="lbl">Without the license</div>
+        <h5>A referral source</h5>
+        <p>You find her. You build the trust. You hand her off — and the relationship and the revenue belong to whoever holds the license. Next month you start over at zero.</p>
+      </div>
+      <div class="win">
+        <div class="lbl">As advisor of record</div>
+        <h5>The owner of the relationship</h5>
+        <p>You find her. You build the trust. She becomes a client of <em>your</em> practice, a team builds the plan, and the revenue recurs — every year, whether or not you find someone new.</p>
+      </div>
+    </div>
+
+    <div class="pq tight">
+      <p>You built the relationship.<br><em>Who owns it?</em></p>
+      <div class="attrib">The question worth sitting with</div>
+    </div>
+
+    <p class="prose">Your brand asks women to think in generations. That's a thirty-year promise, and it only holds if the relationship survives a change of firm. Right now the trust is personal and the relationship is not. <span class="mark-ink">Ownership is what closes that gap.</span></p>
+
+    <div class="callout ink">
+      <div class="c-lbl">And the part that closes the loop</div>
+      <p>The practice itself becomes what your daughters inherit. You wouldn't just be helping women build a legacy — <em>you'd be building one.</em></p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="sec-n">02</span><h2>The authority hub</h2><span class="note">Titles from your outline</span></div>
+    <div class="serves">Serves <b>Goal 01 — be the voice</b></div>
+
+    <div class="pq">
+      <p>An advisor with a microphone is a salesperson.<br>An <em>owner of record</em> with a microphone is an expert.</p>
+    </div>
+
+    <p class="lead-line">Your gift works one conversation at a time. It converts beautifully, and it is <span class="mark">capped at your calendar.</span></p>
+
+    <div class="stat-strip">
+      <div class="hi"><b>5&ndash;6</b><span>inbound conversations a week, right now</span></div>
+      <div class="hi"><b>$0</b><span>spent on advertising to get them</span></div>
+      <div><b>1</b><span>of you, which is the entire problem</span></div>
+    </div>
+
+    <p class="prose">The demand already exists. What's missing is anything that builds trust while you're not in the room. <strong>The podcast runs your same conversation at scale</strong> — every episode doing the work of a first meeting before you ever meet.</p>
+
+    <div class="serves" style="margin:36px 0 0">The conversion mechanism &mdash; <b>every episode walks this ladder</b></div>
+    <div class="ladder" style="margin-top:14px">
+      <div class="rung"><div class="r-n">Problem</div><p>We plan the transfer of wealth and never preserve the woman who built it.</p></div>
+      <div class="rung"><div class="r-n">Pain</div><p>Your children inherit your money and never know who you were.</p></div>
+      <div class="rung"><div class="r-n">Promise</div><p>They can know you. Your money can carry your meaning.</p></div>
+      <div class="rung"><div class="r-n">Proof</div><p>Other women's stories, episode after episode.</p></div>
+      <div class="rung"><div class="r-n">Proposition</div><p>The legacy quiz — five questions, her own answers.</p></div>
+      <div class="rung"><div class="r-n">Path</div><p>A conversation with you, already halfway there.</p></div>
+    </div>
+
+    <div class="callout">
+      <div class="c-lbl">Your words, about Jerry</div>
+      <p>&ldquo;When someone shows up already convinced you're the one to help them — <em>lights out.</em>&rdquo;</p>
+    </div>
+    <p class="prose">That's the whole point. This manufactures that condition on purpose, at volume, every week.</p>
+
+    <div class="pod" style="margin-top:34px">
+      <div>
+        <div class="art">
+          <div class="tagtop">The podcast</div>
+          <div class="img"></div>
+          <div class="band">
+            <h3>Wealth. Worth. <em>Legacy.</em></h3>
+            <div class="by">with Sara Adams</div>
+          </div>
+        </div>
+        <div class="plats"><span class="plat">Spotify</span><span class="plat">Apple</span><span class="plat">YouTube</span></div>
+      </div>
+      <div class="eps">
+        <div class="ep now"><span class="ep-n">01</span><span class="ep-t">What am I actually leaving my girls?</span><span class="ep-d">28 min</span><span class="play on"><span class="tri"></span></span></div>
+        <div class="ep"><span class="ep-n">02</span><span class="ep-t">The woman behind the wealth</span><span class="ep-d">34 min</span><span class="play"><span class="tri"></span></span></div>
+        <div class="ep"><span class="ep-n">03</span><span class="ep-t">What did it cost you to become her?</span><span class="ep-d">41 min</span><span class="play"><span class="tri"></span></span></div>
+        <div class="ep"><span class="ep-n">04</span><span class="ep-t">Before I was your mom</span><span class="ep-d">30 min</span><span class="play"><span class="tri"></span></span></div>
+        <div class="bar"><span class="time">9:34</span><div class="track"><i></i><b></b></div><span class="time">28:02</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="sec-n">03</span><h2>Getting known</h2><span class="note">All of this is already in motion</span></div>
+    <div class="serves">Serves <b>Goal 01 and Goal 02 — be the voice, and be heard everywhere</b></div>
+
+    <div class="pq">
+      <p>Your guest list <em>is</em> your prospect list.</p>
+    </div>
+
+    <p class="prose">The women you'd interview about legacy are the exact women you'd want as clients. Founders. Executives. Women who built something and haven't been asked about it properly.</p>
+
+    <div class="callout ink">
+      <div class="c-lbl">What an episode actually is</div>
+      <p>A forty-five minute conversation about money, family, and meaning — with a qualified prospect who <em>agreed to show up, prepared, and thanked you for it.</em></p>
+    </div>
+
+    <p class="prose">You said the first meeting is where you're strongest. This is a first meeting where she said yes before you asked for anything. <span class="mark-ink">No pitch ever has to happen.</span> Some guests become clients. The rest refer.</p>
+
+    <div class="serves" style="margin:46px 0 0">Borrowed audiences &mdash; <b>and why they only pay off if you own somewhere to send them</b></div>
+    <p class="prose" style="margin-top:16px">Money Hungry Mama already found you and booked you, unsolicited, to talk about building a career while raising two girls as a military spouse. That happened without a brand, a site, or a single piece of marketing.</p>
+    <p class="prose">Right now that appearance evaporates. Someone hears it, likes you, searches your name, and finds nothing to do next. <strong>With the hub, every appearance compounds instead of expiring.</strong></p>
+
+    <div class="cons" style="margin-top:38px">
+      <div class="con">
+        <div class="cn">i</div><h5>Women and money</h5>
+        <p>Where you're already booked. The category that maps most directly to what you sell.</p>
+      </div>
+      <div class="con">
+        <div class="cn">ii</div><h5>Military spouse life</h5>
+        <p>Five moves, a career built anyway. An audience nobody in wealth is speaking to.</p>
+      </div>
+      <div class="con">
+        <div class="cn">iii</div><h5>Rebuilding after divorce</h5>
+        <p>Your story, told to the women living it right now. The deepest well you have.</p>
+      </div>
+      <div class="con">
+        <div class="cn">iv</div><h5>Female founders</h5>
+        <p>Their audience is your client base. The overlap is close to total.</p>
+      </div>
+    </div>
+
+    <p class="prose" style="margin-top:34px">The team builds the target list and does the pitching. You show up and talk, which is the part you'd do for free anyway.</p>
+
+    <div class="serves" style="margin:46px 0 0">The speaking ladder &mdash; <b>you called it a fantasy; it's a sequence</b></div>
+    <div class="flowline" style="margin-top:14px">
+      <div class="fl">
+        <div class="fn">Now</div><h5>Guest on shows</h5>
+        <p>Already happening. Make it deliberate instead of accidental.</p>
+      </div>
+      <div class="fl">
+        <div class="fn">Next</div><h5>Host your own</h5>
+        <p>Guesting becomes reciprocal. Your guests promote you to their audiences.</p>
+      </div>
+      <div class="fl">
+        <div class="fn">Then</div><h5>Local stages</h5>
+        <p>The Knoxville meetup you described. Your room, your women, your story.</p>
+      </div>
+      <div class="fl">
+        <div class="fn">Then</div><h5>Industry panels</h5>
+        <p>A woman advising women, in an industry short on both. You're a story.</p>
+      </div>
+      <div class="fl">
+        <div class="fn">Then</div><h5>Paid keynotes</h5>
+        <p>The thing you said you wanted, reached by walking rather than wishing.</p>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:44px">
+      <div class="c-lbl">Two accelerants you already have</div>
+      <p>A friend five minutes away with 800,000 followers. And an event idea you pitched yourself — <em>a monthly Knoxville night showcasing a woman who built something.</em></p>
+    </div>
+
+    <p class="prose">One collaboration at that scale outruns months of organic. The meetup is a content engine, a local press hook, and the prototype of the national version — all at once.</p>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="sec-n">04</span><h2>Bringing in the business</h2><span class="note">Illustrative</span></div>
+    <div class="serves">Serves <b>Goal 02 — reach women anywhere, not just Knoxville</b></div>
+    <p class="lead-line">You were never actually limited to Knoxville. Your book already spans the country. What's missing isn't permission to go national — it's <span class="mark">a front door that's open while you're asleep.</span></p>
+
+    <div class="callout">
+      <div class="c-lbl">The quiz is the conversion point</div>
+      <p>It turns anonymous attention into a named woman who has <em>already told you what matters to her</em> — before you ever meet.</p>
+    </div>
+    <div class="browser">
+      <div class="chrome">
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        <div class="url">wealthworthlegacy.com</div>
+      </div>
+      <div class="site">
+        <div class="site-nav">
+          <div class="logo">Wealth. Worth. Legacy.</div>
+          <ul><li>Her story</li><li>Podcast</li><li>Legacy quiz</li><li>Work with Sara</li></ul>
+          <div class="nav-cta">Book a call</div>
+        </div>
+        <div class="site-hero">
+          <div>
+            <div class="kick">For the women who built it</div>
+            <h3>Every woman has a <em>legacy.</em></h3>
+            <p>Not just what you leave behind. Who you were while you built it, and what you want them to know.</p>
+            <div class="btn-row">
+              <button class="btn">Take the legacy quiz</button>
+              <button class="btn-2">Listen to the show</button>
+            </div>
+          </div>
+          <div class="site-photo"></div>
+        </div>
+      </div>
+      <div class="strip">
+        <div><div class="n">i</div><h4>The quiz</h4><p>Five questions that surface what she wants to leave behind. She raises her hand before you ever meet.</p></div>
+        <div><div class="n">ii</div><h4>The conversation</h4><p>Her story first. The financial picture follows from it. This is the part you love.</p></div>
+        <div><div class="n">iii</div><h4>The plan</h4><p>Built by the APR planning team. Presented in your voice, on your relationship.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="sec-n">04b</span><h2>The audience it builds</h2><span class="note">Illustrative numbers</span></div>
+    <div class="serves">Serves <b>Goal 02 and Goal 04 — nationwide reach, and a platform other women want to join</b></div>
+    <p class="prose" style="margin-bottom:30px">Social is the distribution layer, not a separate job. One recording becomes a week of clips, a newsletter, a post. Ads come last and only once the loop already converts — you're proving it converts right now, at five to six conversations a week, on zero spend.</p>
+    <div class="ig">
+      <div class="phone">
+        <div class="screen">
+          <div class="ig-top">saralizadams</div>
+          <div class="ig-prof">
+            <div class="ig-row">
+              <div class="av"></div>
+              <div class="stats">
+                <div class="stat"><b>128</b><span>posts</span></div>
+                <div class="stat"><b>14.2k</b><span>followers</span></div>
+                <div class="stat"><b>612</b><span>following</span></div>
+              </div>
+            </div>
+            <div class="handle">Sara Adams</div>
+            <div class="bio">
+              Financial advisor · single mom of two<br>
+              Helping women leave more than money<br>
+              <span class="b">Take the legacy quiz ↓</span>
+            </div>
+          </div>
+          <div class="grid">
+            <div class="cell c-bone"><span>What are financially smart women doing differently?</span></div>
+            <div class="cell c-p1"></div>
+            <div class="cell c-blush"><span>Ep. 01 is live</span></div>
+            <div class="cell c-p2"></div>
+            <div class="cell c-ink"><span>What am I leaving my girls?</span></div>
+            <div class="cell c-bone"><span>The woman behind the wealth</span></div>
+            <div class="cell c-blush"><span>3 money moves before 40</span></div>
+            <div class="cell c-p4"></div>
+            <div class="cell c-p3"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="growth">
+        <div class="g-lbl">Followers</div>
+        <div style="display:flex;align-items:baseline;margin-top:8px;">
+          <span class="g-num">14,200</span><span class="g-delta">↑ 11,800 in 12 months</span>
+        </div>
+        <svg viewBox="0 0 640 230" style="width:100%;height:auto;margin-top:20px;display:block;">
+          <defs><linearGradient id="f" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#c98f83" stop-opacity=".26"/>
+            <stop offset="100%" stop-color="#c98f83" stop-opacity="0"/>
+          </linearGradient></defs>
+          <line x1="0" y1="190" x2="640" y2="190" stroke="rgba(31,31,29,.16)"/>
+          <line x1="0" y1="130" x2="640" y2="130" stroke="rgba(31,31,29,.05)"/>
+          <line x1="0" y1="70" x2="640" y2="70" stroke="rgba(31,31,29,.05)"/>
+          <line x1="0" y1="14" x2="640" y2="14" stroke="rgba(31,31,29,.05)"/>
+          <path d="M8 182 C 72 180, 126 173, 176 162 C 230 150, 274 138, 324 120 C 376 101, 418 82, 470 60 C 522 38, 578 22, 632 12 L632 190 L8 190 Z" fill="url(#f)"/>
+          <path d="M8 182 C 72 180, 126 173, 176 162 C 230 150, 274 138, 324 120 C 376 101, 418 82, 470 60 C 522 38, 578 22, 632 12" fill="none" stroke="#c98f83" stroke-width="2.2" stroke-linecap="round"/>
+          <line x1="176" y1="162" x2="176" y2="190" stroke="rgba(31,31,29,.18)" stroke-dasharray="3 3"/>
+          <line x1="324" y1="120" x2="324" y2="190" stroke="rgba(31,31,29,.18)" stroke-dasharray="3 3"/>
+          <line x1="470" y1="60" x2="470" y2="190" stroke="rgba(31,31,29,.18)" stroke-dasharray="3 3"/>
+          <circle cx="176" cy="162" r="4.5" fill="#fffdfa" stroke="#c98f83" stroke-width="2"/>
+          <circle cx="324" cy="120" r="4.5" fill="#fffdfa" stroke="#c98f83" stroke-width="2"/>
+          <circle cx="470" cy="60" r="4.5" fill="#fffdfa" stroke="#c98f83" stroke-width="2"/>
+          <circle cx="632" cy="12" r="5.5" fill="#c98f83"/>
+          <text x="176" y="211" font-size="10.5" letter-spacing="1" fill="#8d8880" font-family="Jost,sans-serif" text-anchor="middle">SITE LIVE</text>
+          <text x="324" y="211" font-size="10.5" letter-spacing="1" fill="#8d8880" font-family="Jost,sans-serif" text-anchor="middle">PODCAST</text>
+          <text x="470" y="211" font-size="10.5" letter-spacing="1" fill="#8d8880" font-family="Jost,sans-serif" text-anchor="middle">ADS ON</text>
+        </svg>
+        <div class="metrics">
+          <div><b>5&ndash;6</b><span>conversations / wk</span></div>
+          <div><b>1,900</b><span>on the email list</span></div>
+          <div><b>340</b><span>quiz completions</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="sec-n">05</span><h2>Handing off the work</h2></div>
+    <div class="serves">Serves <b>Goal 03 and Goal 04 — hand off the plan, and make room for other women</b></div>
+    <p class="lead-line">You said you don't want to be a recruiter. You shouldn't be. <span class="mark">The platform is what makes other women want in.</span></p>
+
+    <div class="callout">
+      <div class="c-lbl">The trigger isn't ambition — it's arithmetic</div>
+      <p>When the pipeline exceeds what one person can serve, <em>that overflow becomes a seat.</em></p>
+    </div>
+    <div class="engine">
+      <div class="step">
+        <div class="s-n">i</div><h4>The first meeting</h4>
+        <p>Yours. The story, the relationship, the read on what matters to her. The part you're best at and the only part that needs you.</p>
+      </div>
+      <div class="step">
+        <div class="s-n">ii</div><h4>The planning team</h4>
+        <p>Ten full-time planners build the plan. Unlimited technical capacity that never touches your calendar.</p>
+      </div>
+      <div class="step">
+        <div class="s-n">iii</div><h4>Back in your voice</h4>
+        <p>The plan returns to you. You present it, on your relationship, without having built the model yourself.</p>
+      </div>
+      <div class="step">
+        <div class="s-n">iv</div><h4>The next seat</h4>
+        <p>When volume outgrows you, an associate takes the overflow. APR shares the ramp cost, so growth doesn't come out of your margin.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="sec-n">06</span><h2>The platform you end up with</h2></div>
+    <div class="serves">Serves <b>everything — this is what it was all for</b></div>
+
+    <div class="pq">
+      <p>Today you get paid when you produce.<br>Owned, it pays you whether or not you're <em>in the room.</em></p>
+    </div>
+
+    <p class="lead-line">Recurring fee revenue compounds. A team is what makes the business run without you — and <span class="mark">a business that runs without you is a business with a multiple.</span></p>
+
+    <p class="prose">That's the difference between an income and an asset. It's also the honest answer to what you came looking for. You asked for stability.</p>
+
+    <div class="callout ink">
+      <div class="c-lbl">Say this part out loud</div>
+      <p>A salary someone else sets isn't stability — it's permission. <em>Equity is the version that can't be taken back.</em></p>
+    </div>
+
+    <div class="vision">
+      <div>
+        <h3>What it actually buys you</h3>
+        <div class="v-list">
+          <div><b>The stage.</b> The speaking, the events, the retreats — the parts of your vision that don't bill get funded by the parts that do.</div>
+          <div><b>The choosing.</b> Which women, which rooms, which year. Nobody assigns them to you.</div>
+          <div><b>The other women.</b> Advisors in your practice, doing what you did, because your platform is what made it possible.</div>
+          <div><b>The girls.</b> They watch their mother build something. Then they inherit it.</div>
+        </div>
+      </div>
+      <div class="v-photo"></div>
+    </div>
+  </section>
+
+  <section class="close">
+    <h2>You'd be helping women build a legacy<br>while <em>building your own.</em></h2>
+    <p>You, Jerry, and me. One conversation, on your terms, at your pace.</p>
+  </section>
+
+  <p class="foot">
+    <b>A note on what's real here.</b> The photos, the brand, and the episode titles are yours. Follower counts and metrics are illustrative, meant to show the shape of growth rather than predict it. The website and podcast are mockups of what the team would build, not finished design. Associate ramp-cost sharing and licensing timelines are Axiom Planning Resources program details to confirm with Jerry.
+  </p>
+
+</div>
+</body>
+</html>
