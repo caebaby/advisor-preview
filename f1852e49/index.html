@@ -291,6 +291,14 @@
   .v-list div:first-child{border-top:none;padding-top:0;}
   .v-list b{font-weight:500;color:var(--ink);}
 
+  /* part dividers */
+  .part{margin-top:110px;}
+  .part .p-inner{display:flex;align-items:center;gap:40px;padding:34px 0;}
+  .part .p-n{font-family:var(--serif);font-style:italic;font-size:110px;line-height:.8;color:var(--blush-deep);flex:none;}
+  .part .p-kick{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3);}
+  .part h2{font-family:var(--serif);font-weight:400;font-size:42px;letter-spacing:-.015em;margin-top:6px;line-height:1.1;}
+  .part .p-sub{font-size:14px;color:var(--ink-2);margin-top:9px;max-width:640px;line-height:1.6;}
+
   /* brief panel */
   .brief{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:var(--white);border:1px solid var(--line);border-top:2px solid var(--ink);box-shadow:var(--sh);margin-top:14px;}
   .brief > div{padding:24px 26px 28px;border-right:1px solid var(--line);}
@@ -347,6 +355,41 @@
     <div class="rule-b"></div>
   </section>
 
+  <section class="sec" style="padding-top:56px">
+    <div class="serves" style="margin-bottom:0">The short version</div>
+    <div class="brief">
+      <div>
+        <div class="b-lbl">Where you are</div>
+        <p>Five to six women a week already come to you, on zero marketing. There's no license to capture fee revenue, no recurring base, and the team you hand work to isn't yours.</p>
+      </div>
+      <div>
+        <div class="b-lbl">What's in the way</div>
+        <p>Four constraints: license, positioning, team, systems. All four are structural, and Axiom Planning Resources has something built for each.</p>
+      </div>
+      <div>
+        <div class="b-lbl">The plan</div>
+        <p>Get licensed. Build the brand hub. Stay in the first meeting, where you're strongest. Hand the plan work to a planning team. Let overflow become seats for other women.</p>
+      </div>
+      <div>
+        <div class="b-lbl">Where it ends</div>
+        <p>A practice you own: your clients, your brand, fee revenue that recurs, and equity your daughters inherit.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="part">
+    <div class="rule-t"></div>
+    <div class="p-inner">
+      <span class="p-n">1</span>
+      <div>
+        <div class="p-kick">Part one</div>
+        <h2>What you want</h2>
+        <p class="p-sub">Four goals, in your words, from our call.</p>
+      </div>
+    </div>
+    <div class="rule-b"></div>
+  </section>
+
   <section class="goals">
     <p class="lead">You already know what you want. Everything that follows is built to get you there.</p>
     <div class="goal-grid">
@@ -373,29 +416,20 @@
     </div>
   </section>
 
-  <section class="sec" style="padding-top:64px">
-    <div class="serves" style="margin-bottom:0">The short version</div>
-    <div class="brief">
+  <section class="part">
+    <div class="rule-t"></div>
+    <div class="p-inner">
+      <span class="p-n">2</span>
       <div>
-        <div class="b-lbl">Where you are</div>
-        <p>Five to six women a week already come to you, on zero marketing. There's no license to capture fee revenue, no recurring base, and the team you hand work to isn't yours.</p>
-      </div>
-      <div>
-        <div class="b-lbl">What's in the way</div>
-        <p>Four constraints: license, positioning, team, systems. All four are structural, and Axiom Planning Resources has something built for each.</p>
-      </div>
-      <div>
-        <div class="b-lbl">The plan</div>
-        <p>Get licensed. Build the brand hub. Stay in the first meeting, where you're strongest. Hand the plan work to a planning team. Let overflow become seats for other women.</p>
-      </div>
-      <div>
-        <div class="b-lbl">Where it ends</div>
-        <p>A practice you own: your clients, your brand, fee revenue that recurs, and equity your daughters inherit.</p>
+        <div class="p-kick">Part two</div>
+        <h2>Where you are</h2>
+        <p class="p-sub">The gap between those goals and today, and the four constraints underneath it.</p>
       </div>
     </div>
+    <div class="rule-b"></div>
   </section>
 
-  <section class="sec" style="padding-top:78px">
+  <section class="sec" style="padding-top:48px">
     <div class="sec-head"><span class="sec-n">&mdash;</span><h2>The gap</h2><span class="note">Your words, from our call</span></div>
     <p class="lead-line" style="margin-bottom:30px">Every one of these is something you already want. None of them are failures of effort. <span class="mark">They're all the same structural problem.</span></p>
 
@@ -534,7 +568,20 @@
     </div>
   </section>
 
-  <section class="sec">
+  <section class="part">
+    <div class="rule-t"></div>
+    <div class="p-inner">
+      <span class="p-n">3</span>
+      <div>
+        <div class="p-kick">Part three</div>
+        <h2>The strategy</h2>
+        <p class="p-sub">Five moves, numbered 01 through 05. Each gets its own section below.</p>
+      </div>
+    </div>
+    <div class="rule-b"></div>
+  </section>
+
+  <section class="sec" style="padding-top:48px">
     <div class="sec-head"><span class="sec-n">&mdash;</span><h2>The strategy</h2></div>
     <p class="lead-line" style="margin-bottom:12px">You stay where you're strongest — <span class="mark">bringing in the business</span> — and everything else gets handed to a team or a system.</p>
     <p class="prose" style="margin-bottom:6px">You're already the best part of this business. The strategy doesn't ask you to become a planner or an operator. It builds the machinery around what you do naturally, then keeps adding capacity as the demand grows.</p>
@@ -973,7 +1020,20 @@
     <p class="chart-cap" style="max-width:720px">You said it plainly: &ldquo;I don't like the financial side.&rdquo; The dark block is that side. It moves to the planning team, admin moves to staff and systems, and what stays is finding her, meeting her, and recording. Proportions illustrative.</p>
   </section>
 
-  <section class="sec">
+  <section class="part">
+    <div class="rule-t"></div>
+    <div class="p-inner">
+      <span class="p-n">4</span>
+      <div>
+        <div class="p-kick">Part four</div>
+        <h2>Where it ends, and when it starts</h2>
+        <p class="p-sub">The platform you own at the end, and what the first year looks like.</p>
+      </div>
+    </div>
+    <div class="rule-b"></div>
+  </section>
+
+  <section class="sec" style="padding-top:48px">
     <div class="sec-head"><span class="sec-n">06</span><h2>The platform you end up with</h2></div>
     <div class="serves">Serves <b>everything — this is what it was all for</b></div>
 
