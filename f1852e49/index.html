@@ -313,8 +313,12 @@
     .gap-row:hover{background-color:rgba(255,253,250,.65);}
     .hp-card,.st-card{transition:transform .2s cubic-bezier(.22,1,.36,1),box-shadow .2s cubic-bezier(.22,1,.36,1);}
     .hp-card:hover,.st-card:hover{transform:translateY(-2px);box-shadow:var(--sh);}
-    .v-badge{transition:transform .2s cubic-bezier(.22,1,.36,1);}
-    .site-photo:hover .v-badge{transform:translateX(-50%) translateY(-3px);}
+    .vh-play{transition:transform .22s cubic-bezier(.22,1,.36,1),background-color .22s ease-out;}
+    .vhero:hover .vh-play{transform:translateY(-50%) scale(1.07);background:var(--white);}
+    .reel{transition:transform .22s cubic-bezier(.22,1,.36,1);}
+    .reel:hover{transform:translateY(-3px);}
+    .vt-play{transition:transform .22s cubic-bezier(.22,1,.36,1),background-color .22s ease-out;}
+    .vt-card:hover .vt-play{transform:translate(-50%,-50%) scale(1.08);background:var(--white);}
   }
   @media (prefers-reduced-motion: reduce){
     *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important;}
@@ -338,6 +342,48 @@
   .st-card{background:var(--white);border:1px solid var(--line);border-radius:8px;padding:20px 22px;}
   .st-q{font-family:var(--serif);font-style:italic;font-size:14.5px;line-height:1.55;}
   .st-a{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-top:12px;}
+
+  /* faux site v2: video hero, reels, video story, quiz band, footer */
+  .vhero{position:relative;aspect-ratio:16/8;background:url('sara-photos/hero.jpg') center 16%/cover;overflow:hidden;}
+  .vh-scrim{position:absolute;inset:0;background:linear-gradient(90deg,rgba(31,31,29,.74) 0%,rgba(31,31,29,.38) 46%,rgba(31,31,29,.06) 72%),linear-gradient(180deg,transparent 58%,rgba(31,31,29,.5));}
+  .vh-copy{position:absolute;left:46px;bottom:38px;max-width:440px;z-index:2;}
+  .vh-copy .kick{color:var(--blush-2);}
+  .vh-copy h3{font-family:var(--serif);font-weight:400;font-size:46px;line-height:1.04;letter-spacing:-.02em;color:var(--white);margin:12px 0 14px;}
+  .vh-copy h3 em{font-style:italic;color:var(--blush-2);}
+  .vh-copy p{color:rgba(246,243,238,.85);font-size:14.5px;line-height:1.65;margin-bottom:22px;max-width:380px;}
+  .vh-play{position:absolute;right:64px;top:50%;transform:translateY(-50%);width:76px;height:76px;border-radius:50%;background:var(--blush);display:grid;place-items:center;z-index:2;}
+  .vh-play i{width:0;height:0;border-left:22px solid var(--ink);border-top:13px solid transparent;border-bottom:13px solid transparent;margin-left:6px;}
+  .vh-dur{position:absolute;right:46px;bottom:24px;z-index:2;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.55);padding:6px 11px;border-radius:4px;}
+  .reels{padding:34px 46px 8px;}
+  .reel-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+  .reel{aspect-ratio:9/16;border-radius:8px;overflow:hidden;position:relative;background-size:cover;background-color:var(--bone-2);}
+  .reel::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(31,31,29,.62));}
+  .r-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:40px;height:40px;border-radius:50%;background:rgba(255,253,250,.85);display:grid;place-items:center;z-index:1;}
+  .r-play i{width:0;height:0;border-left:11px solid var(--ink);border-top:6.5px solid transparent;border-bottom:6.5px solid transparent;margin-left:3px;}
+  .r-dur{position:absolute;right:10px;top:10px;z-index:1;font-size:10px;letter-spacing:.1em;color:#fff;background:rgba(0,0,0,.5);padding:4px 8px;border-radius:4px;}
+  .r-cap{position:absolute;left:12px;right:12px;bottom:12px;z-index:1;color:var(--white);font-size:12px;line-height:1.4;}
+  .reel-cta{background:var(--blush);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;}
+  .reel-cta::after{display:none;}
+  .reel-cta b{font-family:var(--serif);font-weight:400;font-size:19px;line-height:1.2;}
+  .reel-cta span{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;border:1px solid rgba(31,31,29,.35);border-radius:100px;padding:8px 16px;}
+  .vt-row{display:grid;grid-template-columns:1.05fr .95fr;gap:26px;align-items:center;}
+  .vt-card{aspect-ratio:16/9;border-radius:8px;overflow:hidden;position:relative;background:url('sara-photos/site.jpg') center 18%/cover;}
+  .vt-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.4));}
+  .vt-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;background:var(--blush);display:grid;place-items:center;z-index:1;}
+  .vt-play i{width:0;height:0;border-left:16px solid var(--ink);border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:4px;}
+  .vt-dur{position:absolute;right:12px;bottom:12px;z-index:1;font-size:10px;letter-spacing:.1em;color:#fff;background:rgba(0,0,0,.55);padding:4px 8px;border-radius:4px;}
+  .vt-quote .st-q{font-size:19px;line-height:1.5;}
+  .quizband{padding:40px 46px;background:var(--ink);display:flex;align-items:center;justify-content:space-between;gap:34px;}
+  .qb-kick{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--blush-2);}
+  .qb-h{font-family:var(--serif);font-weight:400;font-size:30px;line-height:1.15;color:var(--bone);margin-top:8px;}
+  .qb-h em{font-style:italic;color:var(--blush-2);}
+  .qb-sub{font-size:13px;color:rgba(246,243,238,.68);margin-top:8px;}
+  .qb-right{display:flex;flex-direction:column;align-items:flex-end;gap:14px;flex:none;}
+  .qb-dots{display:flex;gap:6px;}
+  .qb-dots i{width:26px;height:3px;background:rgba(246,243,238,.25);}
+  .qb-dots i.on{background:var(--blush-2);}
+  .site-foot{display:flex;gap:28px;align-items:center;padding:22px 46px;border-top:1px solid var(--line);background:var(--white);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);}
+  .site-foot .sf-logo{font-family:var(--serif);font-size:14px;letter-spacing:0;text-transform:none;color:var(--ink);margin-right:auto;}
 
   /* funnel */
   .funnel-card{background:var(--white);border:1px solid var(--line);border-radius:10px;box-shadow:var(--sh);padding:30px 32px 24px;margin-top:16px;}
@@ -874,17 +920,28 @@
           <ul><li>Her story</li><li>Podcast</li><li>Legacy quiz</li><li>Work with Sara</li></ul>
           <div class="nav-cta">Book a call</div>
         </div>
-        <div class="site-hero">
-          <div>
+        <div class="vhero">
+          <div class="vh-scrim"></div>
+          <div class="vh-copy">
             <div class="kick">For the women who built it</div>
             <h3>Every woman has a <em>legacy.</em></h3>
             <p>Not just what you leave behind. Who you were while you built it, and what you want them to know.</p>
             <div class="btn-row">
-              <button class="btn">Take the legacy quiz</button>
-              <button class="btn-2">Listen to the show</button>
+              <button class="btn-2">Take the legacy quiz</button>
+              <button class="btn" style="background:transparent;border:1px solid rgba(246,243,238,.5);color:var(--bone)">Listen to the show</button>
             </div>
           </div>
-          <div class="site-photo"><span class="v-badge"><i class="v-play"></i>Watch her story &middot; 2 min</span></div>
+          <span class="vh-play"><i></i></span>
+          <span class="vh-dur">Her story &middot; 2:14</span>
+        </div>
+        <div class="reels">
+          <div class="lbl-mini">Short takes</div>
+          <div class="reel-row">
+            <div class="reel" style="background-image:url('sara-photos/hero.jpg');background-position:center 26%"><span class="r-play"><i></i></span><span class="r-dur">0:38</span><span class="r-cap">What I tell my girls about money</span></div>
+            <div class="reel" style="background-image:url('sara-photos/site.jpg');background-position:60% 10%"><span class="r-play"><i></i></span><span class="r-dur">0:52</span><span class="r-cap">The residuals lesson I learned late</span></div>
+            <div class="reel" style="background-image:url('sara-photos/podcast.jpg');background-position:center 12%"><span class="r-play"><i></i></span><span class="r-dur">0:41</span><span class="r-cap">Legacy isn't a number</span></div>
+            <div class="reel reel-cta"><b>What will they<br>know about you?</b><span>Take the quiz</span></div>
+          </div>
         </div>
         <div class="homepods">
           <div class="lbl-mini">Latest from the show</div>
@@ -896,11 +953,14 @@
         </div>
         <div class="stories">
           <div class="lbl-mini">Client stories &middot; <i>sample content, not real clients</i></div>
-          <div class="st-row">
-            <div class="st-card">
+          <div class="vt-row">
+            <div class="vt-card"><span class="vt-play"><i></i></span><span class="vt-dur">3:05</span></div>
+            <div class="vt-quote">
               <p class="st-q">&ldquo;She asked about my girls before she asked about my money. The plan came later, and it made sense for the first time.&rdquo;</p>
               <div class="st-a">Rachel &middot; founder</div>
             </div>
+          </div>
+          <div class="st-row" style="grid-template-columns:repeat(2,1fr);margin-top:14px">
             <div class="st-card">
               <p class="st-q">&ldquo;Thirty years of building, and nobody ever asked what I wanted it to mean. Sara asked in the first hour.&rdquo;</p>
               <div class="st-a">Elaine &middot; business owner</div>
@@ -911,14 +971,26 @@
             </div>
           </div>
         </div>
+        <div class="quizband">
+          <div>
+            <div class="qb-kick">The legacy quiz</div>
+            <div class="qb-h">What will they know about <em>you?</em></div>
+            <p class="qb-sub">Five questions. Your answers, not your account balances.</p>
+          </div>
+          <div class="qb-right">
+            <div class="qb-dots"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div>
+            <button class="btn-2">Take the quiz</button>
+          </div>
+        </div>
       </div>
       <div class="strip">
         <div><div class="n">i</div><h4>The quiz</h4><p>Five questions that surface what she wants to leave behind. She raises her hand before you ever meet.</p></div>
         <div><div class="n">ii</div><h4>The conversation</h4><p>Her story first. The financial picture follows from it. This is the part you love.</p></div>
         <div><div class="n">iii</div><h4>The plan</h4><p>Built by the APR planning team. Presented in your voice, on your relationship.</p></div>
       </div>
+      <div class="site-foot"><span class="sf-logo">Wealth. Worth. Legacy.</span><span>Her story</span><span>Podcast</span><span>Legacy quiz</span><span>Speaking</span><span>Work with Sara</span></div>
     </div>
-    <p class="chart-cap" style="max-width:760px">Mockup for visual purposes only. The site design, episodes, and client stories are sample content showing what the team would build. The stories are invented for layout &mdash; not real clients, not real results.</p>
+    <p class="chart-cap" style="max-width:760px">Mockup for visual purposes only. The site design, the videos, the episodes, and the client stories are sample content showing what the team would build. Nothing plays, and the stories are invented for layout &mdash; not real clients, not real results.</p>
 
     <div class="serves" style="margin:46px 0 0">The same machine, as a funnel &mdash; <b>widths illustrative</b></div>
     <div class="funnel-card">
