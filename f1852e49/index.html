@@ -291,6 +291,57 @@
   .v-list div:first-child{border-top:none;padding-top:0;}
   .v-list b{font-weight:500;color:var(--ink);}
 
+  /* hover motion — Jakub-weighted: subtle, 180-240ms, ease-out; data viz stays static */
+  @media (hover:hover){
+    .goal,.con,.step,.rung,.fl,.sp,.tl-m,.brief > div{transition:transform .2s cubic-bezier(.22,1,.36,1),background-color .2s cubic-bezier(.22,1,.36,1);}
+    .goal:hover,.con:hover,.step:hover,.rung:hover,.fl:hover,.sp:hover{background-color:var(--white);transform:translateY(-2px);}
+    .tl-m:hover{transform:translateY(-2px);}
+    .brief > div:hover{background-color:var(--bone);}
+    .callout{transition:transform .22s cubic-bezier(.22,1,.36,1),box-shadow .22s cubic-bezier(.22,1,.36,1);}
+    .callout:hover{transform:translateY(-2px);box-shadow:var(--sh);}
+    .browser,.phone,.eps,.income,.growth,.funnel-card,.art{transition:transform .24s cubic-bezier(.22,1,.36,1),box-shadow .24s cubic-bezier(.22,1,.36,1);}
+    .browser:hover,.phone:hover,.eps:hover,.income:hover,.growth:hover,.funnel-card:hover{transform:translateY(-3px);box-shadow:var(--sh-lg);}
+    .pill,.plat{transition:border-color .18s ease-out,transform .18s cubic-bezier(.22,1,.36,1);}
+    .pill:hover,.plat:hover{border-color:var(--blush-deep);transform:translateY(-1px);}
+    .arrow{transition:transform .2s cubic-bezier(.22,1,.36,1);}
+    .arrow:hover{transform:translateX(3px);}
+    .ep{transition:background-color .18s ease-out;}
+    .ep:hover{background:var(--bone);}
+    .ep .play{transition:background-color .18s ease-out,border-color .18s ease-out;}
+    .ep:hover .play{background:var(--blush);border-color:transparent;}
+    .gap-row{transition:background-color .2s ease-out;}
+    .gap-row:hover{background-color:rgba(255,253,250,.65);}
+    .hp-card,.st-card{transition:transform .2s cubic-bezier(.22,1,.36,1),box-shadow .2s cubic-bezier(.22,1,.36,1);}
+    .hp-card:hover,.st-card:hover{transform:translateY(-2px);box-shadow:var(--sh);}
+    .v-badge{transition:transform .2s cubic-bezier(.22,1,.36,1);}
+    .site-photo:hover .v-badge{transform:translateX(-50%) translateY(-3px);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important;}
+  }
+
+  /* site mockup: hero video badge, home podcast row, sample stories */
+  .site-photo{position:relative;}
+  .v-badge{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);background:rgba(31,31,29,.82);color:var(--bone);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;padding:11px 20px;border-radius:100px;display:inline-flex;align-items:center;gap:10px;white-space:nowrap;}
+  .v-play{width:0;height:0;border-left:9px solid var(--bone);border-top:5.5px solid transparent;border-bottom:5.5px solid transparent;}
+  .lbl-mini{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);margin-bottom:16px;}
+  .lbl-mini i{font-style:normal;color:var(--blush-deep);}
+  .homepods{padding:34px 46px 38px;border-top:1px solid var(--line);}
+  .hp-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  .hp-card{background:var(--white);border:1px solid var(--line);border-radius:8px;padding:16px 18px;display:flex;align-items:center;gap:13px;}
+  .hp-play{width:30px;height:30px;border-radius:50%;flex:none;background:var(--blush);display:flex;align-items:center;justify-content:center;}
+  .hp-play i{width:0;height:0;border-left:7px solid var(--ink);border-top:4.5px solid transparent;border-bottom:4.5px solid transparent;margin-left:2px;}
+  .hp-t{font-size:13px;line-height:1.4;}
+  .hp-d{font-size:11px;color:var(--ink-3);margin-top:2px;}
+  .stories{padding:34px 46px 40px;border-top:1px solid var(--line);}
+  .st-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  .st-card{background:var(--white);border:1px solid var(--line);border-radius:8px;padding:20px 22px;}
+  .st-q{font-family:var(--serif);font-style:italic;font-size:14.5px;line-height:1.55;}
+  .st-a{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-top:12px;}
+
+  /* funnel */
+  .funnel-card{background:var(--white);border:1px solid var(--line);border-radius:10px;box-shadow:var(--sh);padding:30px 32px 24px;margin-top:16px;}
+
   /* part dividers */
   .part{margin-top:110px;}
   .part .p-inner{display:flex;align-items:center;gap:40px;padding:34px 0;}
@@ -833,7 +884,32 @@
               <button class="btn-2">Listen to the show</button>
             </div>
           </div>
-          <div class="site-photo"></div>
+          <div class="site-photo"><span class="v-badge"><i class="v-play"></i>Watch her story &middot; 2 min</span></div>
+        </div>
+        <div class="homepods">
+          <div class="lbl-mini">Latest from the show</div>
+          <div class="hp-row">
+            <div class="hp-card"><span class="hp-play"><i></i></span><span><span class="hp-t">What am I actually leaving my girls?</span><span class="hp-d">Ep. 01 &middot; 28 min</span></span></div>
+            <div class="hp-card"><span class="hp-play"><i></i></span><span><span class="hp-t">The woman behind the wealth</span><span class="hp-d">Ep. 02 &middot; 34 min</span></span></div>
+            <div class="hp-card"><span class="hp-play"><i></i></span><span><span class="hp-t">Before I was your mom</span><span class="hp-d">Ep. 04 &middot; 30 min</span></span></div>
+          </div>
+        </div>
+        <div class="stories">
+          <div class="lbl-mini">Client stories &middot; <i>sample content, not real clients</i></div>
+          <div class="st-row">
+            <div class="st-card">
+              <p class="st-q">&ldquo;She asked about my girls before she asked about my money. The plan came later, and it made sense for the first time.&rdquo;</p>
+              <div class="st-a">Rachel &middot; founder</div>
+            </div>
+            <div class="st-card">
+              <p class="st-q">&ldquo;Thirty years of building, and nobody ever asked what I wanted it to mean. Sara asked in the first hour.&rdquo;</p>
+              <div class="st-a">Elaine &middot; business owner</div>
+            </div>
+            <div class="st-card">
+              <p class="st-q">&ldquo;I finally have a plan I can explain to my daughters.&rdquo;</p>
+              <div class="st-a">Dana &middot; executive</div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="strip">
@@ -841,6 +917,24 @@
         <div><div class="n">ii</div><h4>The conversation</h4><p>Her story first. The financial picture follows from it. This is the part you love.</p></div>
         <div><div class="n">iii</div><h4>The plan</h4><p>Built by the APR planning team. Presented in your voice, on your relationship.</p></div>
       </div>
+    </div>
+    <p class="chart-cap" style="max-width:760px">Mockup for visual purposes only. The site design, episodes, and client stories are sample content showing what the team would build. The stories are invented for layout &mdash; not real clients, not real results.</p>
+
+    <div class="serves" style="margin:46px 0 0">The same machine, as a funnel &mdash; <b>widths illustrative</b></div>
+    <div class="funnel-card">
+      <svg viewBox="0 0 640 320" style="max-width:560px;width:100%;height:auto;margin:0 auto;display:block;">
+        <path d="M30 10 L610 10 L550 60 L90 60 Z" fill="#efeae2"/>
+        <path d="M90 68 L550 68 L495 118 L145 118 Z" fill="#f3d9d4"/>
+        <path d="M145 126 L495 126 L445 176 L195 176 Z" fill="#e9c3bb"/>
+        <path d="M195 184 L445 184 L405 234 L235 234 Z" fill="#c98f83"/>
+        <path d="M235 242 L405 242 L380 292 L260 292 Z" fill="#1f1f1d"/>
+        <text x="320" y="40" font-size="11" letter-spacing="1.5" fill="#4a4845" font-family="Jost,sans-serif" text-anchor="middle">ATTENTION</text>
+        <text x="320" y="98" font-size="11" letter-spacing="1.5" fill="#4a4845" font-family="Jost,sans-serif" text-anchor="middle">THE SITE</text>
+        <text x="320" y="156" font-size="11" letter-spacing="1.5" fill="#4a4845" font-family="Jost,sans-serif" text-anchor="middle">THE QUIZ</text>
+        <text x="320" y="214" font-size="11" letter-spacing="1.5" fill="#fffdfa" font-family="Jost,sans-serif" text-anchor="middle">CONVERSATIONS</text>
+        <text x="320" y="270" font-size="11" letter-spacing="1.5" fill="#f6f3ee" font-family="Jost,sans-serif" text-anchor="middle">CLIENTS</text>
+      </svg>
+      <p class="chart-cap" style="margin-top:18px">The show, the guesting, and social fill the top. The site catches the attention, the quiz turns it into names, and only the last two layers need you. Everything above them runs on the team.</p>
     </div>
   </section>
 
@@ -1140,7 +1234,7 @@
   </section>
 
   <p class="foot">
-    <b>A note on what's real here.</b> The photos, the brand, and the episode titles are yours. Follower counts, metrics, time proportions, and the income chart are illustrative, meant to show shape rather than predict numbers. The website and podcast are mockups of what the team would build, not finished design. Associate ramp-cost sharing and licensing timelines are Axiom Planning Resources program details to confirm with Jerry. The $30 trillion wealth-transfer figure is from McKinsey's research on women in US wealth management.
+    <b>A note on what's real here.</b> The photos, the brand, and the episode titles are yours. Follower counts, metrics, time proportions, and the income chart are illustrative, meant to show shape rather than predict numbers. The website and podcast are mockups of what the team would build, not finished design, and the client stories inside the site mockup are invented placeholders, not real clients. Associate ramp-cost sharing and licensing timelines are Axiom Planning Resources program details to confirm with Jerry. The $30 trillion wealth-transfer figure is from McKinsey's research on women in US wealth management.
   </p>
 
 </div>
