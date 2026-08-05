@@ -85,12 +85,17 @@
   .btn{font-family:var(--sans);font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;padding:15px 30px;border-radius:100px;background:var(--ink);color:var(--bone);border:none;}
   .btn-2{font-family:var(--sans);font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;padding:15px 28px;border-radius:100px;background:var(--blush);color:var(--ink);border:none;}
   .site-photo{aspect-ratio:4/5;background:var(--bone-2) url('sara-photos/site.jpg') center 14%/cover;}
-  .strip{display:grid;grid-template-columns:repeat(3,1fr);background:var(--white);}
-  .strip div{padding:32px 34px;border-right:1px solid var(--line);}
-  .strip div:last-child{border-right:none;}
-  .strip .n{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--blush-deep);}
-  .strip h4{font-family:var(--serif);font-weight:400;font-size:20px;margin:8px 0 8px;}
-  .strip p{font-size:14px;color:var(--ink-3);line-height:1.6;}
+  .strip{background:var(--bone);padding:36px 46px 40px;}
+  .strip-lbl{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);margin-bottom:24px;}
+  .strip-lbl i{font-style:normal;color:var(--blush-deep);}
+  .strip-row{display:grid;grid-template-columns:repeat(3,1fr);gap:0;position:relative;}
+  .strip-row::before{content:"";position:absolute;left:0;right:0;top:17px;height:1px;background:var(--line);}
+  .strip-step{padding-right:40px;position:relative;}
+  .strip-step:last-child{padding-right:0;}
+  .strip-num{width:36px;height:36px;border-radius:50%;background:var(--white);border:1px solid var(--blush-2);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-style:italic;font-size:15px;color:var(--blush-deep);position:relative;z-index:1;}
+  .strip-step.on .strip-num{background:var(--blush);border-color:transparent;color:var(--ink);}
+  .strip-step h4{font-family:var(--serif);font-weight:400;font-size:20px;margin:18px 0 8px;}
+  .strip-step p{font-size:13.5px;color:var(--ink-3);line-height:1.6;max-width:270px;}
 
   /* podcast */
   .pod{display:grid;grid-template-columns:370px 1fr;gap:44px;align-items:start;}
@@ -313,6 +318,8 @@
     .gap-row:hover{background-color:rgba(255,253,250,.65);}
     .hp-card,.st-card{transition:transform .2s cubic-bezier(.22,1,.36,1),box-shadow .2s cubic-bezier(.22,1,.36,1);}
     .hp-card:hover,.st-card:hover{transform:translateY(-2px);box-shadow:var(--sh);}
+    .strip-step .strip-num{transition:transform .2s cubic-bezier(.22,1,.36,1),background-color .2s ease-out,border-color .2s ease-out;}
+    .strip-step:hover .strip-num{transform:translateY(-2px);background:var(--blush);border-color:transparent;color:var(--ink);}
     .vh-play{transition:transform .22s cubic-bezier(.22,1,.36,1),background-color .22s ease-out;}
     .vhero:hover .vh-play{transform:translateY(-50%) scale(1.07);background:var(--white);}
     .reel{transition:transform .22s cubic-bezier(.22,1,.36,1);}
@@ -986,9 +993,12 @@
         </div>
       </div>
       <div class="strip">
-        <div><div class="n">i</div><h4>The quiz</h4><p>Five questions that surface what she wants to leave behind. She raises her hand before you ever meet.</p></div>
-        <div><div class="n">ii</div><h4>The conversation</h4><p>Her story first. The financial picture follows from it. This is the part you love.</p></div>
-        <div><div class="n">iii</div><h4>The plan</h4><p>Built by the APR planning team. Presented in your voice, on your relationship.</p></div>
+        <div class="strip-lbl">How it works &middot; <i>three steps</i></div>
+        <div class="strip-row">
+          <div class="strip-step on"><div class="strip-num">1</div><h4>The quiz</h4><p>Five questions that surface what she wants to leave behind. She raises her hand before you ever meet.</p></div>
+          <div class="strip-step"><div class="strip-num">2</div><h4>The conversation</h4><p>Her story first. The financial picture follows from it. This is the part you love.</p></div>
+          <div class="strip-step"><div class="strip-num">3</div><h4>The plan</h4><p>Built by the APR planning team. Presented in your voice, on your relationship.</p></div>
+        </div>
       </div>
       <div class="site-foot"><span class="sf-logo">Wealth. Worth. Legacy.</span><span>Her story</span><span>Podcast</span><span>Legacy quiz</span><span>Speaking</span><span>Work with Sara</span></div>
     </div>
