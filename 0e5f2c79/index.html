@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>The Advisor Marketing Engine — Cost Model &amp; Delivery Tiers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f7f4ee;
+    --paper-2:#efeadf;
+    --card:#fffdf8;
+    --ink:#1e1f1c;
+    --ink-2:#494a42;
+    --ink-3:#87857a;
+    --line:#ddd7c9;
+    --line-2:#c9c2b0;
+    --green:#2e6b4f;
+    --green-deep:#1f4a37;
+    --green-wash:#e7eee6;
+    --gold-wash:#f2ead6;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Jost',sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:920px;margin:0 auto;padding:0 28px;}
+  .serif{font-family:'Playfair Display',serif;}
+  .eyebrow{
+    font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--green);font-weight:600;
+  }
+  .money{font-variant-numeric:tabular-nums;}
+
+  /* ---------- masthead ---------- */
+  header{padding:72px 0 0;}
+  .mast{
+    border-top:3px solid var(--ink);
+    border-bottom:1px solid var(--line-2);
+    padding:26px 0 30px;
+  }
+  .mast .eyebrow{display:block;margin-bottom:18px;}
+  h1{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(34px,5.2vw,54px);
+    font-weight:600;line-height:1.12;letter-spacing:-.01em;
+    max-width:15em;
+  }
+  .mast-sub{
+    font-family:'Playfair Display',serif;font-style:italic;
+    font-size:clamp(17px,2.4vw,21px);color:var(--ink-2);
+    margin-top:14px;max-width:34em;
+  }
+  .mast-meta{
+    display:flex;flex-wrap:wrap;gap:8px 28px;
+    margin-top:26px;font-size:13px;letter-spacing:.06em;
+    text-transform:uppercase;color:var(--ink-3);
+  }
+  .mast-meta b{color:var(--ink);font-weight:600;}
+
+  /* ---------- short version ---------- */
+  .brief{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    border-bottom:1px solid var(--line-2);
+    padding:30px 0 34px;gap:0 30px;
+  }
+  .brief > div + div{border-left:1px solid var(--line);padding-left:30px;}
+  .brief h3{
+    font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--green);font-weight:600;margin-bottom:10px;
+  }
+  .brief p{font-size:14px;line-height:1.55;color:var(--ink-2);}
+  .brief p b{color:var(--ink);font-weight:600;}
+  .brief-label{
+    padding:26px 0 0;font-size:12px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--ink-3);
+  }
+
+  /* ---------- section chrome ---------- */
+  section{padding:64px 0 8px;}
+  .part{
+    display:flex;align-items:baseline;gap:22px;
+    border-bottom:1px solid var(--ink);padding-bottom:14px;margin-bottom:8px;
+  }
+  .part .num{
+    font-family:'Playfair Display',serif;font-size:52px;font-weight:500;
+    color:var(--green);line-height:1;
+  }
+  .part h2{
+    font-family:'Playfair Display',serif;font-size:clamp(24px,3.4vw,32px);
+    font-weight:600;line-height:1.15;
+  }
+  .part .part-k{
+    margin-left:auto;font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--ink-3);white-space:nowrap;
+  }
+  .lead{
+    font-family:'Playfair Display',serif;font-size:20px;line-height:1.5;
+    color:var(--ink);max-width:36em;margin:26px 0 8px;
+  }
+  .prose{max-width:44em;color:var(--ink-2);margin-top:14px;}
+  .prose b{color:var(--ink);}
+
+  /* ---------- ledger tables ---------- */
+  .ledger{width:100%;border-collapse:collapse;margin-top:30px;font-size:15px;}
+  .ledger caption{
+    text-align:left;font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--ink-3);padding-bottom:12px;
+  }
+  .ledger th{
+    text-align:left;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--ink-3);font-weight:500;padding:0 12px 10px 0;
+    border-bottom:1px solid var(--ink);
+  }
+  .ledger th.r,.ledger td.r{text-align:right;padding-right:0;}
+  .ledger td{
+    padding:11px 12px 11px 0;border-bottom:1px solid var(--line);
+    vertical-align:top;color:var(--ink);
+  }
+  .ledger td.note{color:var(--ink-3);font-size:13.5px;}
+  .ledger .bucket td{
+    padding-top:20px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--green);font-weight:600;border-bottom:none;padding-bottom:2px;
+  }
+  .ledger tr.total td{
+    border-top:2px solid var(--ink);border-bottom:3px double var(--ink);
+    font-weight:600;padding:14px 12px 14px 0;
+  }
+  .ledger tr.total .big{
+    font-family:'Playfair Display',serif;font-size:24px;font-weight:600;
+  }
+  .ledger .sub{color:var(--ink-3);font-size:13px;font-weight:400;}
+
+  /* ---------- hero figure ---------- */
+  .figure-row{
+    display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center;
+    background:var(--card);border:1px solid var(--line);
+    padding:30px 36px;margin-top:36px;
+  }
+  .figure-row .fig{
+    font-family:'Playfair Display',serif;font-size:clamp(44px,6vw,62px);
+    font-weight:600;color:var(--green-deep);line-height:1;white-space:nowrap;
+  }
+  .figure-row .fig small{font-size:.38em;font-weight:500;color:var(--ink-3);letter-spacing:.04em;}
+  .figure-row p{font-size:14.5px;color:var(--ink-2);max-width:34em;}
+
+  .note-block{
+    margin-top:26px;padding:18px 22px;background:var(--paper-2);
+    border-left:3px solid var(--line-2);font-size:14px;color:var(--ink-2);
+    max-width:46em;
+  }
+  .note-block b{color:var(--ink);}
+
+  /* ---------- foundation cards ---------- */
+  .found{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:34px;}
+  .fcard{background:var(--card);border:1px solid var(--line);padding:28px 30px 24px;}
+  .fcard .fc-k{
+    font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);
+  }
+  .fcard h3{
+    font-family:'Playfair Display',serif;font-size:23px;font-weight:600;margin:8px 0 4px;
+  }
+  .fcard .fc-cost{
+    font-family:'Playfair Display',serif;font-size:17px;font-style:italic;
+    color:var(--green);margin-bottom:16px;
+  }
+  .mini{width:100%;border-collapse:collapse;font-size:13.5px;}
+  .mini td{padding:7px 8px 7px 0;border-bottom:1px solid var(--line);color:var(--ink-2);}
+  .mini td.r{text-align:right;padding-right:0;color:var(--ink);white-space:nowrap;}
+  .mini tr.mt td{
+    border-top:2px solid var(--ink);border-bottom:none;font-weight:600;color:var(--ink);
+  }
+  .tbd-list{list-style:none;margin-top:4px;}
+  .tbd-list li{
+    padding:8px 0 8px 0;border-bottom:1px solid var(--line);
+    font-size:14px;color:var(--ink-2);display:flex;gap:10px;
+  }
+  .tbd-list li::before{content:"·";color:var(--green);font-weight:700;}
+  .tbd-tag{
+    display:inline-block;background:var(--gold-wash);border:1px solid var(--line-2);
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;
+    padding:3px 10px;color:var(--ink-2);margin-bottom:14px;
+  }
+
+  /* ---------- tiers ---------- */
+  .tiers{display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px;margin-top:36px;align-items:start;}
+  .tier{
+    background:var(--card);border:1px solid var(--line);border-top:3px solid var(--line-2);
+    padding:26px 26px 0;display:flex;flex-direction:column;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .tier:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(30,31,28,.08);}
+  .tier.t2{border-top-color:var(--green);}
+  .tier.t3{border-top-color:var(--ink);}
+  .tier .t-k{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);font-weight:600;}
+  .tier h3{
+    font-family:'Playfair Display',serif;font-size:26px;font-weight:600;margin:6px 0 12px;
+  }
+  .tier .promise{
+    font-family:'Playfair Display',serif;font-style:italic;font-size:15.5px;
+    line-height:1.5;color:var(--ink-2);border-bottom:1px solid var(--line);
+    padding-bottom:16px;margin-bottom:8px;min-height:66px;
+  }
+  .tier .plus{
+    font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--green);
+    font-weight:600;padding:12px 0 2px;
+  }
+  .tier ul{list-style:none;}
+  .tier li{
+    padding:9px 0;border-bottom:1px solid var(--line);
+    font-size:13.5px;line-height:1.45;
+  }
+  .tier li b{display:block;font-weight:600;color:var(--ink);font-size:14px;}
+  .tier li span{color:var(--ink-3);}
+  .tier .grp{
+    font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);
+    padding:14px 0 2px;font-weight:600;
+  }
+  .tier .t-job{
+    margin:18px -26px 0;background:var(--paper-2);padding:14px 26px 16px;
+    font-size:13px;color:var(--ink-2);
+  }
+  .tier .t-job b{
+    display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--ink);margin-bottom:3px;
+  }
+  .tier .t-time{
+    margin:0 -26px;border-top:1px solid var(--line);padding:10px 26px 12px;
+    background:var(--paper-2);
+    font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);
+  }
+
+  /* ---------- every-tier strip ---------- */
+  .always{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:0 26px;
+    border-top:1px solid var(--ink);border-bottom:1px solid var(--line-2);
+    margin-top:40px;padding:22px 0 24px;
+  }
+  .always > div + div{border-left:1px solid var(--line);padding-left:26px;}
+  .always h4{font-size:13px;font-weight:600;margin-bottom:4px;}
+  .always p{font-size:12.5px;color:var(--ink-3);line-height:1.5;}
+  .always-label{
+    font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--green);font-weight:600;margin-top:38px;
+  }
+
+  /* ---------- logic trio ---------- */
+  .logic{display:grid;grid-template-columns:1fr 1fr 1fr;gap:26px;margin-top:30px;}
+  .logic h4{
+    font-family:'Playfair Display',serif;font-size:19px;font-weight:600;margin-bottom:6px;
+  }
+  .logic h4 em{font-style:italic;color:var(--green);}
+  .logic p{font-size:14px;color:var(--ink-2);line-height:1.55;}
+
+  .callout{
+    margin-top:40px;background:var(--ink);color:var(--paper);
+    padding:26px 32px;max-width:100%;
+  }
+  .callout p{
+    font-family:'Playfair Display',serif;font-size:20px;line-height:1.5;font-weight:500;
+  }
+  .callout .c-k{
+    font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.2em;
+    text-transform:uppercase;color:#b9c9be;display:block;margin-bottom:8px;font-weight:600;
+  }
+
+  .cohort{
+    display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center;
+    background:var(--green-wash);border:1px solid var(--line);
+    padding:26px 32px;margin-top:26px;
+  }
+  .cohort .c-fig{
+    font-family:'Playfair Display',serif;font-size:44px;font-weight:600;
+    color:var(--green-deep);line-height:1.05;white-space:nowrap;
+  }
+  .cohort .c-fig small{display:block;font-size:12px;font-family:'Jost',sans-serif;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-top:6px;}
+  .cohort p{font-size:14.5px;color:var(--ink-2);max-width:36em;}
+
+  /* ---------- a la carte ---------- */
+  .passthrough{margin-top:30px;display:grid;grid-template-columns:1fr 1fr;gap:26px;}
+  .pt-card{background:var(--card);border:1px solid var(--line);padding:24px 28px;}
+  .pt-card h4{
+    font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--green);font-weight:600;margin-bottom:12px;
+  }
+  .pt-card ul{list-style:none;}
+  .pt-card li{padding:6px 0;border-bottom:1px solid var(--line);font-size:14px;color:var(--ink-2);}
+  .pt-card li:last-child{border-bottom:none;}
+
+  /* ---------- decisions ---------- */
+  .decisions{margin-top:34px;counter-reset:dec;}
+  .dec{
+    display:grid;grid-template-columns:64px 1fr auto;gap:0 24px;
+    border-bottom:1px solid var(--line);padding:20px 0;align-items:baseline;
+  }
+  .dec:first-child{border-top:1px solid var(--ink);}
+  .dec::before{
+    counter-increment:dec;content:"0" counter(dec);
+    font-family:'Playfair Display',serif;font-size:28px;color:var(--green);font-weight:500;
+  }
+  .dec h4{font-size:16.5px;font-weight:600;margin-bottom:2px;}
+  .dec p{font-size:14px;color:var(--ink-2);max-width:40em;}
+  .dec .owner{
+    font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);
+    white-space:nowrap;font-weight:600;
+  }
+
+  /* ---------- footer ---------- */
+  footer{
+    margin-top:80px;border-top:3px solid var(--ink);
+    padding:26px 0 60px;
+  }
+  footer .wrap{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;}
+  footer p{font-size:12.5px;color:var(--ink-3);max-width:38em;line-height:1.6;}
+
+  /* ---------- motion ---------- */
+  @media (prefers-reduced-motion: no-preference){
+    .rise{opacity:0;transform:translateY(10px);animation:rise .7s ease forwards;}
+    .rise.d1{animation-delay:.08s}.rise.d2{animation-delay:.16s}.rise.d3{animation-delay:.24s}
+    @keyframes rise{to{opacity:1;transform:none;}}
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width:860px){
+    .brief{grid-template-columns:1fr 1fr;gap:24px 26px;}
+    .brief > div + div{border-left:none;padding-left:0;}
+    .brief > div:nth-child(even){border-left:1px solid var(--line);padding-left:26px;}
+    .tiers{grid-template-columns:1fr;}
+    .tier .promise{min-height:0;}
+    .found{grid-template-columns:1fr;}
+    .always{grid-template-columns:1fr 1fr;gap:20px 26px;}
+    .always > div + div{border-left:none;padding-left:0;}
+    .always > div:nth-child(even){border-left:1px solid var(--line);padding-left:26px;}
+    .logic{grid-template-columns:1fr;gap:20px;}
+    .passthrough{grid-template-columns:1fr;}
+    .figure-row,.cohort{grid-template-columns:1fr;gap:16px;}
+    .dec{grid-template-columns:48px 1fr;}
+    .dec .owner{grid-column:2;margin-top:6px;}
+  }
+  @media (max-width:560px){
+    .wrap{padding:0 20px;}
+    .brief{grid-template-columns:1fr;}
+    .brief > div:nth-child(even){border-left:none;padding-left:0;}
+    .always{grid-template-columns:1fr;}
+    .always > div:nth-child(even){border-left:none;padding-left:0;}
+    .ledger td.note{display:none;}
+    .ledger th:nth-child(4){display:none;}
+    header{padding-top:44px;}
+  }
+
+  /* ---------- print ---------- */
+  @media print{
+    body{background:#fff;font-size:13px;}
+    .tier:hover{transform:none;box-shadow:none;}
+    section{padding:34px 0 6px;page-break-inside:avoid;}
+    .rise{opacity:1 !important;transform:none !important;animation:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="mast rise">
+      <span class="eyebrow">Advisor Growth Lab &times; Axiom Planning Resources</span>
+      <h1>The Advisor Marketing&nbsp;Engine</h1>
+      <p class="mast-sub">What Axiom covers each month, the foundation every advisor receives, and the three tiers advisors can buy on top of it.</p>
+      <div class="mast-meta">
+        <span>Prepared for <b>Jerry Corless</b></span>
+        <span>From <b>Chris Evans</b></span>
+        <span><b>August 10, 2026</b></span>
+        <span>Internal working document</span>
+      </div>
+    </div>
+
+    <div class="brief-label rise d1">The short version</div>
+    <div class="brief rise d1">
+      <div>
+        <h3>The floor</h3>
+        <p><b>$2,007/mo</b> keeps the operation running: rent, Chris&rsquo;s AI working environment, and the production tools shared across every advisor account.</p>
+      </div>
+      <div>
+        <h3>The foundation</h3>
+        <p>Every advisor gets a <b>brand, website, and story video</b>, provided by Axiom at no cost to the advisor. Delivery runs about <b>$950</b> per advisor, plus video (being priced now).</p>
+      </div>
+      <div>
+        <h3>The tiers</h3>
+        <p>Advisors who want more buy it in three tiers: <b>Good, Better, Best</b>. Each is a defined monthly scope the current team can deliver.</p>
+      </div>
+      <div>
+        <h3>To decide</h3>
+        <p>Story video cost, tier pricing, add-on pricing, and the founding cohort. The full list closes this page.</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= PART 1 ================= -->
+<section>
+  <div class="wrap">
+    <div class="part rise d2">
+      <span class="num serif">01</span>
+      <h2>What Axiom covers monthly</h2>
+      <span class="part-k">Operational floor</span>
+    </div>
+
+    <p class="lead rise d3">Three buckets. Rent is the only true fixed cost; everything else flexes with volume.</p>
+    <p class="prose rise d3">The AI stack is Chris&rsquo;s working environment. The production tools are shared across every advisor account rather than attributed to any one advisor.</p>
+
+    <table class="ledger">
+      <thead>
+        <tr><th>Line item</th><th class="r">Monthly</th><th style="width:18px"></th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr class="bucket"><td colspan="4">1 &middot; Fixed</td></tr>
+        <tr><td>Office rent</td><td class="r money">$927</td><td></td><td class="note">Only true fixed cost</td></tr>
+
+        <tr class="bucket"><td colspan="4">2A &middot; Flex &mdash; Chris&rsquo;s AI stack</td></tr>
+        <tr><td>Claude Pro</td><td class="r money">$400</td><td></td><td class="note">Primary work engine</td></tr>
+        <tr><td>ChatGPT Plus</td><td class="r money">$100</td><td></td><td class="note">Secondary + image generation</td></tr>
+        <tr><td>GLM</td><td class="r money">$100</td><td></td><td class="note">Long-doc analysis, cost-efficient bulk work</td></tr>
+
+        <tr class="bucket"><td colspan="4">2B &middot; Flex &mdash; Shared production tools (per Johnny)</td></tr>
+        <tr><td>Higgsfield</td><td class="r money">$180</td><td></td><td class="note">Creative content + B-roll</td></tr>
+        <tr><td>Sheena AI credits</td><td class="r money">$100</td><td></td><td class="note">Content generation across advisors</td></tr>
+        <tr><td>Sheena AI video editing</td><td class="r money">$75</td><td></td><td class="note">Editing workflow across advisors</td></tr>
+
+        <tr class="bucket"><td colspan="4">Usage-based</td></tr>
+        <tr><td>AI API overage, estimated midpoint</td><td class="r money">$125</td><td></td><td class="note">Ranges $50&ndash;200 on heavy weeks</td></tr>
+
+        <tr class="total">
+          <td>Axiom monthly ask <span class="sub">&nbsp;&mdash; fixed + flex base + estimated usage</span></td>
+          <td class="r money big">$2,007</td><td></td><td></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="figure-row">
+      <div class="fig money">$2,007<small>&thinsp;/mo</small></div>
+      <p>Sized for the founding cohort of roughly 14 advisors. At 30+ accounts, expect the shared production bucket to grow from $355 to $500&ndash;600 a month &mdash; a second Higgsfield seat and expanded Sheena credits.</p>
+    </div>
+
+    <div class="note-block">
+      <b>Not on this statement:</b> Johnny&rsquo;s compensation, the Sheena/VA layer, Jordan&rsquo;s per-shoot rate, a future media buyer, and Chris&rsquo;s compensation. Each is a separate arrangement or a separate conversation. This page is the operating floor and the delivery model only.
+    </div>
+  </div>
+</section>
+
+<!-- ================= PART 2 ================= -->
+<section>
+  <div class="wrap">
+    <div class="part">
+      <span class="num serif">02</span>
+      <h2>The foundation &mdash; every advisor gets this</h2>
+      <span class="part-k">Provided by Axiom</span>
+    </div>
+
+    <p class="lead">The website and the story video are foundational. Axiom provides both, at no cost to the advisor.</p>
+    <p class="prose">Nobody goes into an ongoing tier without them. They make an advisor look legitimate, and they produce the raw assets every tier builds from. Compliance review is handled inside the ongoing service, not itemized per build.</p>
+
+    <div class="found">
+      <div class="fcard">
+        <span class="fc-k">Foundation component 1</span>
+        <h3>Brand + Website</h3>
+        <div class="fc-cost">Cost to deliver: $800&ndash;$1,100 &middot; midpoint ~$950</div>
+        <table class="mini">
+          <tbody>
+            <tr><td>Brand strategy session (Chris/Johnny, 2 hrs)</td><td class="r money">$150</td></tr>
+            <tr><td>Logo + brand kit (designer via VA layer)</td><td class="r money">$200&ndash;500</td></tr>
+            <tr><td>Brand style guide (1-pager)</td><td class="r money">$50</td></tr>
+            <tr><td>Replit website build (template + skin)</td><td class="r money">$300</td></tr>
+            <tr><td>Google Business + directory cleanup (VA)</td><td class="r money">$75</td></tr>
+            <tr><td>Hosting/domain setup + first month</td><td class="r money">$25</td></tr>
+            <tr class="mt"><td>Total per advisor</td><td class="r money">$800&ndash;$1,100</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="fcard">
+        <span class="fc-k">Foundation component 2</span>
+        <h3>Story Video</h3>
+        <div class="fc-cost">Cost to deliver: open</div>
+        <span class="tbd-tag">Pricing in progress &mdash; Johnny + Jordan</span>
+        <p style="font-size:14px;color:var(--ink-2);margin-bottom:10px;">Four things to nail down before this number is real:</p>
+        <ul class="tbd-list">
+          <li>Jordan&rsquo;s actual day rate</li>
+          <li>How many advisors batch into one shoot day</li>
+          <li>How travel gets treated</li>
+          <li>Edit in-house with Johnny, or freelance</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PART 3 ================= -->
+<section>
+  <div class="wrap">
+    <div class="part">
+      <span class="num serif">03</span>
+      <h2>Ongoing delivery tiers</h2>
+      <span class="part-k">Advisor-funded</span>
+    </div>
+
+    <p class="lead">Foundation done, what do we deliver every month? Each tier is a clear promise with a defined scope of output.</p>
+    <p class="prose">Pricing is deliberately not on this page. It gets set once the delivery scope below is locked &mdash; that&rsquo;s decision 03 at the end.</p>
+
+    <div class="tiers">
+      <!-- GOOD -->
+      <div class="tier t1">
+        <span class="t-k">Good</span>
+        <h3>&ldquo;Look Legit&rdquo;</h3>
+        <p class="promise">You look like a real professional. You capture the referrals you&rsquo;re already earning.</p>
+        <ul>
+          <li><b>Website hosting + maintenance</b><span>Hosting, edits on request, ride-herd service</span></li>
+          <li><b>Compliance handling</b><span>All submissions end to end &mdash; site, video, content</span></li>
+          <li><b>Google review capture</b><span>Automated post-meeting request sequence</span></li>
+          <li><b>LinkedIn presence</b><span>Profile optimized + 2 posts/wk from template library</span></li>
+          <li><b>Referral system starter kit</b><span>Ask scripts + tracker deployed in their CRM</span></li>
+          <li><b>Meeting notes automation</b><span>Fathom &rarr; structured summaries &rarr; CRM</span></li>
+          <li><b>Office hours + Growth Library</b><span>Monthly group call + on-demand video library</span></li>
+        </ul>
+        <div class="t-job"><b>The advisor&rsquo;s job</b>Show up to office hours. Say yes to review requests. That&rsquo;s it.</div>
+        <div class="t-time">Live in 45 days</div>
+      </div>
+
+      <!-- BETTER -->
+      <div class="tier t2">
+        <span class="t-k">Better</span>
+        <h3>&ldquo;Get Known&rdquo;</h3>
+        <p class="promise">You&rsquo;re known before they meet you. One recording session becomes visibility everywhere.</p>
+        <div class="plus">Everything in Good, plus</div>
+        <ul>
+          <li class="grp">Content engine</li>
+          <li><b>Podcast production</b><span>2 episodes/mo &mdash; edited, mastered, distributed</span></li>
+          <li><b>YouTube channel</b><span>Long-form episodes + 6&ndash;8 vertical shorts/mo, thumbnails, SEO</span></li>
+          <li><b>Blog + newsletter</b><span>1 post per episode + monthly client newsletter</span></li>
+          <li><b>LinkedIn ghostwriting</b><span>3 posts/wk in the advisor&rsquo;s voice, they approve</span></li>
+          <li><b>Personalized video</b><span>HeyGen &mdash; review reminders, follow-ups, milestones</span></li>
+          <li class="grp">Client experience</li>
+          <li><b>State-of-Plan letter</b><span>Quarterly, personalized from CRM data</span></li>
+          <li><b>Client gifting program</b><span>Occasion-triggered &mdash; we manage, gifts at cost</span></li>
+          <li><b>Quarterly client event</b><span>Format, invites, follow-up &mdash; advisor hosts</span></li>
+          <li class="grp">Referral network</li>
+          <li><b>CPA / COI partnership starter</b><span>Target list + outreach templates + joint packet</span></li>
+        </ul>
+        <div class="t-job"><b>The advisor&rsquo;s job</b>Record one episode a week (about an hour). Review three LinkedIn posts (about 15 minutes).</div>
+        <div class="t-time">First episode live in 45 days</div>
+      </div>
+
+      <!-- BEST -->
+      <div class="tier t3">
+        <span class="t-k">Best</span>
+        <h3>&ldquo;Grow Deliberately&rdquo;</h3>
+        <p class="promise">A real demand engine with real numbers to talk about.</p>
+        <div class="plus">Everything in Better, plus</div>
+        <ul>
+          <li class="grp">Demand engine</li>
+          <li><b>Paid ads management</b><span>Shared media buyer &mdash; Meta first, YouTube pre-roll at 6+ videos</span></li>
+          <li><b>Local SEO + AI search</b><span>Found on Google and on ChatGPT/Perplexity</span></li>
+          <li><b>Lead funnel + assessment</b><span>Built on their site, integrated to CRM</span></li>
+          <li><b>Behavioral lead nurture</b><span>AI-scored, personalized follow-up sequences</span></li>
+          <li><b>AI voice agent</b><span>After-hours + missed-call callback, books discovery calls</span></li>
+          <li class="grp">Client experience</li>
+          <li><b>Client portal + AI concierge</b><span>Documents, action items, informational chatbot</span></li>
+          <li><b>Meeting prep automation</b><span>24-hr pre-meeting brief generated from CRM</span></li>
+          <li><b>Marketing inbox management</b><span>VA-run, AI-drafted in the advisor&rsquo;s voice</span></li>
+          <li class="grp">Growth partnership</li>
+          <li><b>Quarterly strategy session</b><span>Chris or Johnny + reporting dashboard</span></li>
+        </ul>
+        <div class="t-job"><b>The advisor&rsquo;s job</b>Everything in Better, plus one quarterly strategy meeting.</div>
+        <div class="t-time">Ads live in 60 days</div>
+      </div>
+    </div>
+
+    <div class="always-label">In every tier, across the board</div>
+    <div class="always">
+      <div>
+        <h4>Compliance sign-off</h4>
+        <p>Human review on every client-facing artifact, per FINRA 25-07. Non-negotiable.</p>
+      </div>
+      <div>
+        <h4>Office hours + Growth Library</h4>
+        <p>Monthly group call plus the on-demand library.</p>
+      </div>
+      <div>
+        <h4>One point of contact</h4>
+        <p>Johnny owns all fulfillment questions.</p>
+      </div>
+      <div>
+        <h4>Ride-herd service</h4>
+        <p>The boring maintenance nobody else does, done.</p>
+      </div>
+    </div>
+
+    <div class="logic">
+      <div>
+        <h4>Good is <em>table stakes</em></h4>
+        <p>The &ldquo;look like a real firm&rdquo; baseline. If an advisor doesn&rsquo;t want Good, they don&rsquo;t belong on the platform.</p>
+      </div>
+      <div>
+        <h4>Better is <em>the differentiator</em></h4>
+        <p>Where the recruiting-story assets get created &mdash; the podcast, the channel, the client-facing content. Every Better advisor becomes a proof point for the recruit track.</p>
+      </div>
+      <div>
+        <h4>Best is <em>the growth partner</em></h4>
+        <p>Fewer accounts, deeper spend, real ROI conversations. These are the advisors who can talk lead metrics with us.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <span class="c-k">The rule</span>
+      <p>We don&rsquo;t sell a tier until every piece of it is built and tested. Overselling and underdelivering breaks the model.</p>
+    </div>
+
+    <div class="cohort">
+      <div class="c-fig">8 &middot; 4 &middot; 2<small>Founding cohort &mdash; 14 accounts</small></div>
+      <p>Proposed first-90-day mix: 8 Good, 4 Better, 2 Best. That&rsquo;s what the current team supports without breaking delivery. The mix grows each quarter based on what actually delivered.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PART 4 ================= -->
+<section>
+  <div class="wrap">
+    <div class="part">
+      <span class="num serif">04</span>
+      <h2>&Agrave; la carte, outside the tiers</h2>
+      <span class="part-k">Priced individually</span>
+    </div>
+
+    <p class="lead">Anything an advisor wants beyond their tier &mdash; added to their monthly or billed one-time.</p>
+
+    <table class="ledger">
+      <thead>
+        <tr><th>Add-on</th><th>Structure</th><th style="width:18px"></th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Additional podcast episodes</td><td>Per episode beyond 2/mo</td><td></td><td class="note">Same pipeline, incremental edit time</td></tr>
+        <tr><td>Additional film day</td><td>At cost</td><td></td><td class="note">Jordan day rate + travel</td></tr>
+        <tr><td>Private client podcast</td><td>Monthly</td><td></td><td class="note">Client-only feed, private RSS</td></tr>
+        <tr><td>Direct mail campaigns</td><td>Mgmt fee + materials at cost</td><td></td><td class="note">Design + list + print + mail</td></tr>
+        <tr><td>Additional client events</td><td>Per event</td><td></td><td class="note">Beyond the quarterly cadence in Better</td></tr>
+        <tr><td>Book / signature report</td><td>Project</td><td></td><td class="note">Ghostwritten from recorded sessions</td></tr>
+        <tr><td>Additional ad channel</td><td>Monthly</td><td></td><td class="note">Beyond the primary channel in Best</td></tr>
+        <tr><td>Speaking / local media push</td><td>Monthly</td><td></td><td class="note">Media list + pitch outreach</td></tr>
+        <tr><td>Custom landing pages / funnels</td><td>Per build</td><td></td><td class="note">Beyond the standard funnel in Best</td></tr>
+      </tbody>
+    </table>
+
+    <div class="passthrough">
+      <div class="pt-card">
+        <h4>Always passthrough at cost &mdash; never bundled into a tier</h4>
+        <ul>
+          <li>Ad spend</li>
+          <li>Print materials</li>
+          <li>Event venue + food &amp; beverage</li>
+          <li>Gifting materials</li>
+          <li>Additional film days</li>
+        </ul>
+      </div>
+      <div class="pt-card">
+        <h4>And one boundary that protects the model</h4>
+        <p style="font-size:14.5px;color:var(--ink-2);line-height:1.6;">Chris&rsquo;s time stays out of per-account delivery. He&rsquo;s on retainer for strategy and the system layer. If Chris ends up in per-account fulfillment, the model breaks.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PART 5 ================= -->
+<section>
+  <div class="wrap">
+    <div class="part">
+      <span class="num serif">05</span>
+      <h2>Decisions to make together</h2>
+      <span class="part-k">The Jerry conversation</span>
+    </div>
+
+    <div class="decisions">
+      <div class="dec">
+        <div>
+          <h4>Bless the structure</h4>
+          <p>Foundation provided by Axiom, three ongoing tiers on top, add-ons outside. This replaces the earlier four-tier, add-on-heavy version.</p>
+        </div>
+        <span class="owner">Jerry + Chris</span>
+      </div>
+      <div class="dec">
+        <div>
+          <h4>Story video cost</h4>
+          <p>Jordan&rsquo;s day rate, batching per shoot day, travel treatment, edit in-house or freelance.</p>
+        </div>
+        <span class="owner">Johnny + Jordan</span>
+      </div>
+      <div class="dec">
+        <div>
+          <h4>Tier pricing</h4>
+          <p>Set once the delivery scope on this page is locked.</p>
+        </div>
+        <span class="owner">Jerry + Chris</span>
+      </div>
+      <div class="dec">
+        <div>
+          <h4>&Agrave; la carte pricing</h4>
+          <p>Price each add-on after we&rsquo;ve run one of each.</p>
+        </div>
+        <span class="owner">Chris</span>
+      </div>
+      <div class="dec">
+        <div>
+          <h4>Founding cohort</h4>
+          <p>Which advisors fill the 8 Good, 4 Better, and 2 Best slots.</p>
+        </div>
+        <span class="owner">Jerry + Chris</span>
+      </div>
+      <div class="dec">
+        <div>
+          <h4>Compliance reviewer</h4>
+          <p>Axiom&rsquo;s compliance team as reviewer of record, or hire it out.</p>
+        </div>
+        <span class="owner">Jerry</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Numbers match &ldquo;Axiom Evans Numbers v4&rdquo; (August 10, 2026). Tier scope from the August 6 delivery-tier working documents. Internal working document &mdash; not advisor-facing.</p>
+    <p style="text-align:right;">Advisor Growth Lab &middot; Chris Evans</p>
+  </div>
+</footer>
+
+</body>
+</html>
