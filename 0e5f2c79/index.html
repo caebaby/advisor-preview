@@ -10,18 +10,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#f7f4ee;
-    --paper-2:#efeadf;
-    --card:#fffdf8;
-    --ink:#1e1f1c;
-    --ink-2:#494a42;
-    --ink-3:#87857a;
-    --line:#ddd7c9;
-    --line-2:#c9c2b0;
-    --green:#2e6b4f;
-    --green-deep:#1f4a37;
-    --green-wash:#e7eee6;
-    --gold-wash:#f2ead6;
+    --paper:#ffffff;
+    --paper-2:#f4f4f4;
+    --card:#ffffff;
+    --ink:#111111;
+    --ink-2:#3d3d3d;
+    --ink-3:#767676;
+    --line:#e3e3e3;
+    --line-2:#c9c9c9;
+    --green:#111111;
+    --green-deep:#111111;
+    --green-wash:#f4f4f4;
+    --gold-wash:#f4f4f4;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -270,21 +270,8 @@
   }
   .callout .c-k{
     font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.2em;
-    text-transform:uppercase;color:#b9c9be;display:block;margin-bottom:8px;font-weight:600;
+    text-transform:uppercase;color:#bbbbbb;display:block;margin-bottom:8px;font-weight:600;
   }
-
-  .cohort{
-    display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center;
-    background:var(--green-wash);border:1px solid var(--line);
-    padding:26px 32px;margin-top:26px;
-  }
-  .cohort .c-fig{
-    font-family:'Playfair Display',serif;font-size:44px;font-weight:600;
-    color:var(--green-deep);line-height:1.05;white-space:nowrap;
-  }
-  .cohort .c-fig small{display:block;font-size:12px;font-family:'Jost',sans-serif;
-    letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-top:6px;}
-  .cohort p{font-size:14.5px;color:var(--ink-2);max-width:36em;}
 
   /* ---------- a la carte ---------- */
   .passthrough{margin-top:30px;display:grid;grid-template-columns:1fr 1fr;gap:26px;}
@@ -296,24 +283,6 @@
   .pt-card ul{list-style:none;}
   .pt-card li{padding:6px 0;border-bottom:1px solid var(--line);font-size:14px;color:var(--ink-2);}
   .pt-card li:last-child{border-bottom:none;}
-
-  /* ---------- decisions ---------- */
-  .decisions{margin-top:34px;counter-reset:dec;}
-  .dec{
-    display:grid;grid-template-columns:64px 1fr auto;gap:0 24px;
-    border-bottom:1px solid var(--line);padding:20px 0;align-items:baseline;
-  }
-  .dec:first-child{border-top:1px solid var(--ink);}
-  .dec::before{
-    counter-increment:dec;content:"0" counter(dec);
-    font-family:'Playfair Display',serif;font-size:28px;color:var(--green);font-weight:500;
-  }
-  .dec h4{font-size:16.5px;font-weight:600;margin-bottom:2px;}
-  .dec p{font-size:14px;color:var(--ink-2);max-width:40em;}
-  .dec .owner{
-    font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);
-    white-space:nowrap;font-weight:600;
-  }
 
   /* ---------- footer ---------- */
   footer{
@@ -343,9 +312,7 @@
     .always > div:nth-child(even){border-left:1px solid var(--line);padding-left:26px;}
     .logic{grid-template-columns:1fr;gap:20px;}
     .passthrough{grid-template-columns:1fr;}
-    .figure-row,.cohort{grid-template-columns:1fr;gap:16px;}
-    .dec{grid-template-columns:48px 1fr;}
-    .dec .owner{grid-column:2;margin-top:6px;}
+    .figure-row{grid-template-columns:1fr;gap:16px;}
   }
   @media (max-width:560px){
     .wrap{padding:0 20px;}
@@ -372,7 +339,7 @@
 <header>
   <div class="wrap">
     <div class="mast rise">
-      <span class="eyebrow">Advisor Growth Lab &times; Axiom Planning Resources</span>
+      <span class="eyebrow">Axiom Planning Resources</span>
       <h1>The Advisor Marketing&nbsp;Engine</h1>
       <p class="mast-sub">What Axiom covers each month, the foundation every advisor receives, and the three tiers advisors can buy on top of it.</p>
       <div class="mast-meta">
@@ -398,8 +365,8 @@
         <p>Advisors who want more buy it in three tiers: <b>Good, Better, Best</b>. Each is a defined monthly scope the current team can deliver.</p>
       </div>
       <div>
-        <h3>To decide</h3>
-        <p>Story video cost, tier pricing, add-on pricing, and the founding cohort. The full list closes this page.</p>
+        <h3>Still open</h3>
+        <p>Story video cost (Johnny and Jordan are pricing it now) and tier pricing, set once the delivery scope is locked.</p>
       </div>
     </div>
   </div>
@@ -447,7 +414,7 @@
 
     <div class="figure-row">
       <div class="fig money">$2,007<small>&thinsp;/mo</small></div>
-      <p>Sized for the founding cohort of roughly 14 advisors. At 30+ accounts, expect the shared production bucket to grow from $355 to $500&ndash;600 a month: a second Higgsfield seat and expanded Sheena credits.</p>
+      <p>Rent, the AI stack, shared production tools, and estimated usage. The full monthly operational floor.</p>
     </div>
 
     <div class="note-block">
@@ -513,7 +480,7 @@
     </div>
 
     <p class="lead">Foundation done, what do we deliver every month? Each tier is a clear promise with a defined scope of output.</p>
-    <p class="prose">Pricing is deliberately not on this page. It gets set once the delivery scope below is locked. That&rsquo;s decision 03 at the end.</p>
+    <p class="prose">Pricing is deliberately not on this page. It gets set once the delivery scope below is locked.</p>
 
     <div class="tiers">
       <!-- GOOD -->
@@ -623,10 +590,6 @@
       <p>We don&rsquo;t sell a tier until every piece of it is built and tested. Overselling and underdelivering breaks the model.</p>
     </div>
 
-    <div class="cohort">
-      <div class="c-fig">8 &middot; 4 &middot; 2<small>Founding cohort &mdash; 14 accounts</small></div>
-      <p>Proposed first-90-day mix: 8 Good, 4 Better, 2 Best. That&rsquo;s what the current team supports without breaking delivery. The mix grows each quarter based on what actually delivered.</p>
-    </div>
   </div>
 </section>
 
@@ -677,66 +640,10 @@
   </div>
 </section>
 
-<!-- ================= PART 5 ================= -->
-<section>
-  <div class="wrap">
-    <div class="part">
-      <span class="num serif">05</span>
-      <h2>Decisions to make together</h2>
-      <span class="part-k">The Jerry conversation</span>
-    </div>
-
-    <div class="decisions">
-      <div class="dec">
-        <div>
-          <h4>Bless the structure</h4>
-          <p>Foundation provided by Axiom, three ongoing tiers on top, add-ons outside. This replaces the earlier four-tier, add-on-heavy version.</p>
-        </div>
-        <span class="owner">Jerry + Chris</span>
-      </div>
-      <div class="dec">
-        <div>
-          <h4>Story video cost</h4>
-          <p>Jordan&rsquo;s day rate, batching per shoot day, travel treatment, edit in-house or freelance.</p>
-        </div>
-        <span class="owner">Johnny + Jordan</span>
-      </div>
-      <div class="dec">
-        <div>
-          <h4>Tier pricing</h4>
-          <p>Set once the delivery scope on this page is locked.</p>
-        </div>
-        <span class="owner">Jerry + Chris</span>
-      </div>
-      <div class="dec">
-        <div>
-          <h4>&Agrave; la carte pricing</h4>
-          <p>Price each add-on after we&rsquo;ve run one of each.</p>
-        </div>
-        <span class="owner">Chris</span>
-      </div>
-      <div class="dec">
-        <div>
-          <h4>Founding cohort</h4>
-          <p>Which advisors fill the 8 Good, 4 Better, and 2 Best slots.</p>
-        </div>
-        <span class="owner">Jerry + Chris</span>
-      </div>
-      <div class="dec">
-        <div>
-          <h4>Compliance reviewer</h4>
-          <p>Axiom&rsquo;s compliance team as reviewer of record, or hire it out.</p>
-        </div>
-        <span class="owner">Jerry</span>
-      </div>
-    </div>
-  </div>
-</section>
-
 <footer>
   <div class="wrap">
     <p>Numbers match &ldquo;Axiom Evans Numbers v4&rdquo; (August 10, 2026). Tier scope from the August 6 delivery-tier working documents. Internal working document &mdash; not advisor-facing.</p>
-    <p style="text-align:right;">Advisor Growth Lab &middot; Chris Evans</p>
+    <p style="text-align:right;">Axiom Planning Resources &middot; Chris Evans</p>
   </div>
 </footer>
 
