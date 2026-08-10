@@ -60,31 +60,6 @@
     font-size:clamp(17px,2.4vw,21px);color:var(--ink-2);
     margin-top:14px;max-width:34em;
   }
-  .mast-meta{
-    display:flex;flex-wrap:wrap;gap:8px 28px;
-    margin-top:26px;font-size:13px;letter-spacing:.06em;
-    text-transform:uppercase;color:var(--ink-3);
-  }
-  .mast-meta b{color:var(--ink);font-weight:600;}
-
-  /* ---------- short version ---------- */
-  .brief{
-    display:grid;grid-template-columns:repeat(4,1fr);
-    border-bottom:1px solid var(--line-2);
-    padding:30px 0 34px;gap:0 30px;
-  }
-  .brief > div + div{border-left:1px solid var(--line);padding-left:30px;}
-  .brief h3{
-    font-size:12px;letter-spacing:.18em;text-transform:uppercase;
-    color:var(--green);font-weight:600;margin-bottom:10px;
-  }
-  .brief p{font-size:14px;line-height:1.55;color:var(--ink-2);}
-  .brief p b{color:var(--ink);font-weight:600;}
-  .brief-label{
-    padding:26px 0 0;font-size:12px;letter-spacing:.18em;
-    text-transform:uppercase;color:var(--ink-3);
-  }
-
   /* ---------- section chrome ---------- */
   section{padding:64px 0 8px;}
   .part{
@@ -301,9 +276,6 @@
 
   /* ---------- responsive ---------- */
   @media (max-width:860px){
-    .brief{grid-template-columns:1fr 1fr;gap:24px 26px;}
-    .brief > div + div{border-left:none;padding-left:0;}
-    .brief > div:nth-child(even){border-left:1px solid var(--line);padding-left:26px;}
     .tiers{grid-template-columns:1fr;}
     .tier .promise{min-height:0;}
     .found{grid-template-columns:1fr;}
@@ -316,8 +288,6 @@
   }
   @media (max-width:560px){
     .wrap{padding:0 20px;}
-    .brief{grid-template-columns:1fr;}
-    .brief > div:nth-child(even){border-left:none;padding-left:0;}
     .always{grid-template-columns:1fr;}
     .always > div:nth-child(even){border-left:none;padding-left:0;}
     .ledger td.note{display:none;}
@@ -342,32 +312,6 @@
       <span class="eyebrow">Axiom Planning Resources</span>
       <h1>The Advisor Marketing&nbsp;Engine</h1>
       <p class="mast-sub">What Axiom covers each month, the foundation every advisor receives, and the three tiers advisors can buy on top of it.</p>
-      <div class="mast-meta">
-        <span>Prepared for <b>Jerry Corless</b></span>
-        <span>From <b>Chris Evans</b></span>
-        <span><b>August 10, 2026</b></span>
-        <span>Internal working document</span>
-      </div>
-    </div>
-
-    <div class="brief-label rise d1">The short version</div>
-    <div class="brief rise d1">
-      <div>
-        <h3>The floor</h3>
-        <p><b>$2,007/mo</b> keeps the operation running: rent, Chris&rsquo;s AI working environment, and the production tools shared across every advisor account.</p>
-      </div>
-      <div>
-        <h3>The foundation</h3>
-        <p>Every advisor gets a <b>brand, website, and story video</b>, provided by Axiom at no cost to the advisor. The build runs <b>$600</b> per advisor, plus video (being priced now).</p>
-      </div>
-      <div>
-        <h3>The tiers</h3>
-        <p>Advisors who want more buy it in three tiers: <b>Good, Better, Best</b>. Each is a defined monthly scope the current team can deliver.</p>
-      </div>
-      <div>
-        <h3>Still open</h3>
-        <p>Story video cost (Johnny and Jordan are pricing it now) and tier pricing, set once the delivery scope is locked.</p>
-      </div>
     </div>
   </div>
 </header>
